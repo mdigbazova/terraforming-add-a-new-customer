@@ -52,40 +52,40 @@ resource "aws_security_group" "sg-dt-client-erp-dev-ecs" {
 
 }
 
-resource "aws_security_group" "sg-dt-srv-erp-petrol-dev-elb" {
-    // sg-00d6b592122fc9f6a
-    name                = "dt-srv-erp-petrol-dev-elb"
-    description         = "dt-srv-erp-petrol-dev-elb created on 2019-11-01T09:11:27.361+02:00"
-    vpc_id              = aws_vpc.vpc-ha-dev.id
-
-    ingress {
-        from_port       = 443
-        to_port         = 443
-        protocol        = "tcp"
-        cidr_blocks     = ["10.120.0.98/32"]
-        security_groups = [
-                        aws_security_group.sg-dev.id, // sg-dev
-                        aws_security_group.sg-dev-vpn-gateway.id // sg-dev-vpn-gateway
-                        ]
-        self            = false
-    }
-
-    ingress {
-        from_port       = -1
-        to_port         = -1
-        protocol        = "icmp"
-        cidr_blocks     = ["10.120.0.98/32"]
-    }
-
-
-    egress {
-        from_port       = 0
-        to_port         = 0
-        protocol        = "-1"
-        cidr_blocks     = ["0.0.0.0/0"]
-    }
-
-}
+//resource "aws_security_group" "sg-dt-srv-erp-petrol-dev-elb" {
+//    // sg-00d6b592122fc9f6a
+//    name                = "dt-srv-erp-petrol-dev-elb"
+//    description         = "dt-srv-erp-petrol-dev-elb created on 2019-11-01T09:11:27.361+02:00"
+//    vpc_id              = aws_vpc.vpc-ha-dev.id
+//
+//    ingress {
+//        from_port       = 443
+//        to_port         = 443
+//        protocol        = "tcp"
+//        cidr_blocks     = ["10.120.0.98/32"]
+//        security_groups = [
+//                        aws_security_group.sg-dev.id, // sg-dev
+//                        aws_security_group.sg-dev-vpn-gateway.id // sg-dev-vpn-gateway
+//                        ]
+//        self            = false
+//    }
+//
+//    ingress {
+//        from_port       = -1
+//        to_port         = -1
+//        protocol        = "icmp"
+//        cidr_blocks     = ["10.120.0.98/32"]
+//    }
+//
+//
+//    egress {
+//        from_port       = 0
+//        to_port         = 0
+//        protocol        = "-1"
+//        cidr_blocks     = ["0.0.0.0/0"]
+//    }
+//
+//}
 
 //resource "aws_security_group" "sg-dt-db-prod-MongoDBServerSecurityGroup-13WXN2Y9FYIFJ" {
 //      // sg-0103dad4a23a42a8e
@@ -138,32 +138,32 @@ resource "aws_security_group" "sg-dt-srv-erp-petrol-dev-elb" {
 //    }
 //}
 
-resource "aws_security_group" "sg-dt-srv-erp-acc-elb" {
-    // sg-017cb67a010026364
-    name                = "dt-srv-erp-acc-elb"
-    description         = "dt-srv-erp-dev-elb created on 2019-11-04T19:40:26.600+02:00"
-    vpc_id              = aws_vpc.vpc-ha-dev.id
-
-    ingress {
-        from_port       = 443
-        to_port         = 443
-        protocol        = "tcp"
-        security_groups = [
-                           aws_security_group.sg-dt-client-erp-acc-ecs.id,  //"sg-046ad84adac6dac2e", ???? prod or dev
-                           aws_security_group.sg-dev-vpn-gateway.id //sg-dev-vpn-gateway
-                          ]
-        self            = false
-    }
-
-
-    egress {
-        from_port       = 0
-        to_port         = 0
-        protocol        = "-1"
-        cidr_blocks     = ["0.0.0.0/0"]
-    }
-
-}
+//resource "aws_security_group" "sg-dt-srv-erp-acc-elb" {
+//    // sg-017cb67a010026364
+//    name                = "dt-srv-erp-acc-elb"
+//    description         = "dt-srv-erp-dev-elb created on 2019-11-04T19:40:26.600+02:00"
+//    vpc_id              = aws_vpc.vpc-ha-dev.id
+//
+//    ingress {
+//        from_port       = 443
+//        to_port         = 443
+//        protocol        = "tcp"
+//        security_groups = [
+//                           aws_security_group.sg-dt-client-erp-acc-ecs.id,  //"sg-046ad84adac6dac2e", ???? prod or dev
+//                           aws_security_group.sg-dev-vpn-gateway.id //sg-dev-vpn-gateway
+//                          ]
+//        self            = false
+//    }
+//
+//
+//    egress {
+//        from_port       = 0
+//        to_port         = 0
+//        protocol        = "-1"
+//        cidr_blocks     = ["0.0.0.0/0"]
+//    }
+//
+//}
 
 resource "aws_security_group" "sg-dt-srv-erp-tt-dev-elb" {
     // sg-01a99e2dfb5aca44c
@@ -220,37 +220,37 @@ resource "aws_security_group" "sg-dt-srv-erp-dev-elb" {
 
 }
 
-resource "aws_security_group" "sg-dt-client-erp-acc-elb" {
-    // sg-030e076ac7301f4f9 /// acc
-    name                = "dt-client-erp-acc-elb"
-    description         = "dt-client-erp-acc-elb created on 2019-11-05T09:09:06.504+02:00"
-    vpc_id              = aws_vpc.vpc-ha-dev.id
-
-    ingress {
-        from_port       = 80
-        to_port         = 80
-        protocol        = "tcp"
-        security_groups = [aws_security_group.sg-dev-vpn-gateway.id] //"sg-0f853479131f7a43f"]
-        self            = false
-    }
-
-    ingress {
-        from_port       = 443
-        to_port         = 443
-        protocol        = "tcp"
-        security_groups = [aws_security_group.sg-dev-vpn-gateway.id] //"sg-0f853479131f7a43f"]
-        self            = false
-    }
-
-
-    egress {
-        from_port       = 0
-        to_port         = 0
-        protocol        = "-1"
-        cidr_blocks     = ["0.0.0.0/0"]
-    }
-
-}
+//resource "aws_security_group" "sg-dt-client-erp-acc-elb" {
+//    // sg-030e076ac7301f4f9 /// acc
+//    name                = "dt-client-erp-acc-elb"
+//    description         = "dt-client-erp-acc-elb created on 2019-11-05T09:09:06.504+02:00"
+//    vpc_id              = aws_vpc.vpc-ha-dev.id
+//
+//    ingress {
+//        from_port       = 80
+//        to_port         = 80
+//        protocol        = "tcp"
+//        security_groups = [aws_security_group.sg-dev-vpn-gateway.id] //"sg-0f853479131f7a43f"]
+//        self            = false
+//    }
+//
+//    ingress {
+//        from_port       = 443
+//        to_port         = 443
+//        protocol        = "tcp"
+//        security_groups = [aws_security_group.sg-dev-vpn-gateway.id] //"sg-0f853479131f7a43f"]
+//        self            = false
+//    }
+//
+//
+//    egress {
+//        from_port       = 0
+//        to_port         = 0
+//        protocol        = "-1"
+//        cidr_blocks     = ["0.0.0.0/0"]
+//    }
+//
+//}
 
 resource "aws_security_group" "sg-dt-srv-rest-dev-elb" {
     // sg-0332937e14633a532 ="sg-dt-srv-rest-load-balancer"
@@ -303,29 +303,29 @@ resource "aws_security_group" "sg-dt-srv-rest-dev-elb" {
 //
 //}
 
-resource "aws_security_group" "sg-dt-client-erp-acc-ecs" {
-    // sg-046ad84adac6dac2e
-    name                = "dt-client-erp-acc-ecs"
-    description         = "dt-client-erp-acc-ecs created on 2019-11-05T07:13:06.511Z"
-    vpc_id              = aws_vpc.vpc-ha-dev.id
-
-    ingress {
-        from_port       = 3000
-        to_port         = 3000
-        protocol        = "tcp"
-        security_groups = [aws_security_group.sg-dt-client-erp-acc-elb.id] //"sg-030e076ac7301f4f9"]
-        self            = false
-    }
-
-
-    egress {
-        from_port       = 0
-        to_port         = 0
-        protocol        = "-1"
-        cidr_blocks     = ["0.0.0.0/0"]
-    }
-
-}
+//resource "aws_security_group" "sg-dt-client-erp-acc-ecs" {
+//    // sg-046ad84adac6dac2e
+//    name                = "dt-client-erp-acc-ecs"
+//    description         = "dt-client-erp-acc-ecs created on 2019-11-05T07:13:06.511Z"
+//    vpc_id              = aws_vpc.vpc-ha-dev.id
+//
+//    ingress {
+//        from_port       = 3000
+//        to_port         = 3000
+//        protocol        = "tcp"
+//        security_groups = [aws_security_group.sg-dt-client-erp-acc-elb.id] //"sg-030e076ac7301f4f9"]
+//        self            = false
+//    }
+//
+//
+//    egress {
+//        from_port       = 0
+//        to_port         = 0
+//        protocol        = "-1"
+//        cidr_blocks     = ["0.0.0.0/0"]
+//    }
+//
+//}
 
 resource "aws_security_group" "sg-dt-srv-rest-dev-ecs" {
     // sg-051ea12897f00a26e ="sg-digito-9804
@@ -506,80 +506,80 @@ resource "aws_security_group" "sg-dt-client-dev-elb" {
 //
 //}
 
-resource "aws_security_group" "sg-dt-srv-erp-petrol-dev-ecs" {
-    // sg-05c9a73a6a164d7f7
-    name                = "dt-srv-erp-petrol-dev-ecs"
-    description         = "2019-11-01T07:16:18.328Z"
-    vpc_id              = aws_vpc.vpc-ha-dev.id
-
-    ingress {
-        from_port       = 8081
-        to_port         = 8081
-        protocol        = "tcp"
-        security_groups = [aws_security_group.sg-dt-srv-erp-petrol-dev-elb.id] //"sg-00d6b592122fc9f6a"]
-        self            = false
-    }
-
-
-    egress {
-        from_port       = 0
-        to_port         = 0
-        protocol        = "-1"
-        cidr_blocks     = ["0.0.0.0/0"]
-    }
-
-}
-
-resource "aws_security_group" "sg-dt-srv-erp-telenor-dev-ecs" {
-    // sg-067cf45a291db9fa6
-    name                = "dt-srv-erp-telenor-dev-ecs"
-    description         = "2019-10-14T14:32:06.067Z"
-    vpc_id              = aws_vpc.vpc-ha-dev.id
-
-    ingress {
-        from_port       = 8081
-        to_port         = 8081
-        protocol        = "tcp"
-        security_groups = [aws_security_group.sg-dt-srv-erp-telenor-dev-elb.id] //"sg-081c08676157074ba"]
-        self            = false
-    }
-
-
-    egress {
-        from_port       = 0
-        to_port         = 0
-        protocol        = "-1"
-        cidr_blocks     = ["0.0.0.0/0"]
-    }
-
-}
-
-resource "aws_security_group" "sg-dt-srv-erp-ct-dev-ecs" {
-    // sg-06a7317d2a573f8a1
-    name                = "dt-srv-erp-ct-dev-ecs"
-    description         = "2019-07-29T15:37:40.857Z"
-    vpc_id              = aws_vpc.vpc-ha-dev.id
-
-    ingress {
-        from_port       = 8081
-        to_port         = 8081
-        protocol        = "tcp"
-        security_groups = [
-                            aws_security_group.sg-dev.id,  // sg-dev
-                            aws_security_group.sg-dt-srv-erp-ct-dev-elb.id //"sg-0f6fc8675002d9559"
-                          ]
-        self            = false
-    }
-
-
-    egress {
-        from_port       = 0
-        to_port         = 0
-        protocol        = "-1"
-        cidr_blocks     = ["0.0.0.0/0"]
-    }
-
-}
+//resource "aws_security_group" "sg-dt-srv-erp-petrol-dev-ecs" {
+//    // sg-05c9a73a6a164d7f7
+//    name                = "dt-srv-erp-petrol-dev-ecs"
+//    description         = "2019-11-01T07:16:18.328Z"
+//    vpc_id              = aws_vpc.vpc-ha-dev.id
+//
+//    ingress {
+//        from_port       = 8081
+//        to_port         = 8081
+//        protocol        = "tcp"
+//        security_groups = [aws_security_group.sg-dt-srv-erp-petrol-dev-elb.id] //"sg-00d6b592122fc9f6a"]
+//        self            = false
+//    }
+//
+//
+//    egress {
+//        from_port       = 0
+//        to_port         = 0
+//        protocol        = "-1"
+//        cidr_blocks     = ["0.0.0.0/0"]
+//    }
+//
+//}
+//
+//resource "aws_security_group" "sg-dt-srv-erp-telenor-dev-ecs" {
+//    // sg-067cf45a291db9fa6
+//    name                = "dt-srv-erp-telenor-dev-ecs"
+//    description         = "2019-10-14T14:32:06.067Z"
+//    vpc_id              = aws_vpc.vpc-ha-dev.id
+//
+//    ingress {
+//        from_port       = 8081
+//        to_port         = 8081
+//        protocol        = "tcp"
+//        security_groups = [aws_security_group.sg-dt-srv-erp-telenor-dev-elb.id] //"sg-081c08676157074ba"]
+//        self            = false
+//    }
+//
+//
+//    egress {
+//        from_port       = 0
+//        to_port         = 0
+//        protocol        = "-1"
+//        cidr_blocks     = ["0.0.0.0/0"]
+//    }
+//
+//}
+//
+//resource "aws_security_group" "sg-dt-srv-erp-ct-dev-ecs" {
+//    // sg-06a7317d2a573f8a1
+//    name                = "dt-srv-erp-ct-dev-ecs"
+//    description         = "2019-07-29T15:37:40.857Z"
+//    vpc_id              = aws_vpc.vpc-ha-dev.id
+//
+//    ingress {
+//        from_port       = 8081
+//        to_port         = 8081
+//        protocol        = "tcp"
+//        security_groups = [
+//                            aws_security_group.sg-dev.id,  // sg-dev
+//                            aws_security_group.sg-dt-srv-erp-ct-dev-elb.id //"sg-0f6fc8675002d9559"
+//                          ]
+//        self            = false
+//    }
+//
+//
+//    egress {
+//        from_port       = 0
+//        to_port         = 0
+//        protocol        = "-1"
+//        cidr_blocks     = ["0.0.0.0/0"]
+//    }
+//
+//}
 
 //resource "aws_security_group" "sg-prod-eu-central-1a-test" {
 //      // sg-06e0988b718266f8c
@@ -662,41 +662,41 @@ resource "aws_security_group" "sg-dt-srv-erp-ct-dev-ecs" {
 //        "aws:cloudformation:stack-name" = "dt-db-prod"
 //    }
 //}
-
-resource "aws_security_group" "sg-dt-srv-erp-telenor-dev-elb" {
-    // sg-081c08676157074ba
-    name        = "dt-srv-erp-telenor-dev-elb"
-    description = "dt-srv-erp-telenor-dev-elb created on 2019-10-14T17:47:10.192+03:00"
-    vpc_id              = aws_vpc.vpc-ha-dev.id
-
-    ingress {
-        from_port       = 443
-        to_port         = 443
-        protocol        = "tcp"
-        cidr_blocks     = ["172.17.2.100/32"]
-        security_groups = [
-                            aws_security_group.sg-dev.id, // sg-dev
-                            aws_security_group.sg-dev-vpn-gateway.id //"sg-0f853479131f7a43f"
-                          ]
-        self            = false
-    }
-
-    ingress {
-        from_port       = -1
-        to_port         = -1
-        protocol        = "icmp"
-        cidr_blocks     = ["172.17.2.100/32"]
-    }
-
-
-    egress {
-        from_port       = 0
-        to_port         = 0
-        protocol        = "-1"
-        cidr_blocks     = ["0.0.0.0/0"]
-    }
-
-}
+//
+//resource "aws_security_group" "sg-dt-srv-erp-telenor-dev-elb" {
+//    // sg-081c08676157074ba
+//    name        = "dt-srv-erp-telenor-dev-elb"
+//    description = "dt-srv-erp-telenor-dev-elb created on 2019-10-14T17:47:10.192+03:00"
+//    vpc_id              = aws_vpc.vpc-ha-dev.id
+//
+//    ingress {
+//        from_port       = 443
+//        to_port         = 443
+//        protocol        = "tcp"
+//        cidr_blocks     = ["172.17.2.100/32"]
+//        security_groups = [
+//                            aws_security_group.sg-dev.id, // sg-dev
+//                            aws_security_group.sg-dev-vpn-gateway.id //"sg-0f853479131f7a43f"
+//                          ]
+//        self            = false
+//    }
+//
+//    ingress {
+//        from_port       = -1
+//        to_port         = -1
+//        protocol        = "icmp"
+//        cidr_blocks     = ["172.17.2.100/32"]
+//    }
+//
+//
+//    egress {
+//        from_port       = 0
+//        to_port         = 0
+//        protocol        = "-1"
+//        cidr_blocks     = ["0.0.0.0/0"]
+//    }
+//
+//}
 
 //resource "aws_security_group" "sg-dt-client-prod-ecs" {
 //  // sg-0863c3c369961c99f
@@ -766,11 +766,11 @@ resource "aws_security_group" "sg-dev-eu-central-1b-db" {
         protocol        = "tcp"
         security_groups = [
                             aws_security_group.sg-dt-srv-rest-dev-ecs.id, //"sg-051ea12897f00a26e",
-                            aws_security_group.sg-dt-srv-erp-petrol-dev-ecs.id, //"sg-05c9a73a6a164d7f7",
-                            aws_security_group.sg-dt-srv-erp-telenor-dev-ecs.id, //"sg-067cf45a291db9fa6",
-                            aws_security_group.sg-dt-srv-erp-ct-dev-ecs.id, //"sg-06a7317d2a573f8a1",
+                            //aws_security_group.sg-dt-srv-erp-petrol-dev-ecs.id, //"sg-05c9a73a6a164d7f7",
+                            //aws_security_group.sg-dt-srv-erp-telenor-dev-ecs.id, //"sg-067cf45a291db9fa6",
+                            //aws_security_group.sg-dt-srv-erp-ct-dev-ecs.id, //"sg-06a7317d2a573f8a1",
                             aws_security_group.sg-dev.id,  // sg-dev
-                            aws_security_group.sg-dt-srv-erp-acc-ecs.id, //"sg-0ac0021c16f78d930",
+                            //aws_security_group.sg-dt-srv-erp-acc-ecs.id, //"sg-0ac0021c16f78d930",
                             aws_security_group.sg-dt-srv-erp-tt-dev-ecs.id, //"sg-0ece57bb222c09e3a",
                             //aws_security_group.sg-dt-srv-rest-prod-esc.id //"sg-0ee21bbccb99a6303",
                             aws_security_group.sg-dt-srv-erp-dev-ecs.id, //"sg-0f6c897c8f8701e87",
@@ -834,9 +834,9 @@ resource "aws_security_group" "sg-dev" {
         security_groups = [
                           //aws_security_group.sg-dt-srv-erp-prod-ecs.id,
                           aws_security_group.sg-dt-srv-rest-dev-ecs.id,
-                          aws_security_group.sg-dt-srv-erp-petrol-dev-ecs.id, //"sg-05c9a73a6a164d7f7", // dt-srv-erp-petrol-dev-ecs
-                          aws_security_group.sg-dt-srv-erp-telenor-dev-ecs.id, //"sg-067cf45a291db9fa6", // dt-srv-erp-telenor-dev-ecs
-                          aws_security_group.sg-dt-srv-erp-ct-dev-ecs.id, //"sg-06a7317d2a573f8a1", //dt-srv-erp-ct-dev-ecs
+                          //aws_security_group.sg-dt-srv-erp-petrol-dev-ecs.id, //"sg-05c9a73a6a164d7f7", // dt-srv-erp-petrol-dev-ecs
+                          //aws_security_group.sg-dt-srv-erp-telenor-dev-ecs.id, //"sg-067cf45a291db9fa6", // dt-srv-erp-telenor-dev-ecs
+                          //aws_security_group.sg-dt-srv-erp-ct-dev-ecs.id, //"sg-06a7317d2a573f8a1", //dt-srv-erp-ct-dev-ecs
                           aws_security_group.sg-dt-srv-erp-acc-ecs.id, //"sg-0ac0021c16f78d930", // dt-srv-erp-acc-ecs
                           aws_security_group.sg-dt-srv-erp-tt-dev-ecs.id, //"sg-0ece57bb222c09e3a", //dt-srv-erp-tt-dev-ecs
                           //"sg-0ee21bbccb99a6303", //dt-srv-rest-prod-esc
@@ -856,29 +856,29 @@ resource "aws_security_group" "sg-dev" {
 
 }
 
-resource "aws_security_group" "sg-dt-srv-erp-acc-ecs" {
-    // sg-0ac0021c16f78d930
-    name        = "dt-srv-erp-acc-ecs"
-    description = "2019-11-04T17:42:39.724Z"
-    vpc_id              = aws_vpc.vpc-ha-dev.id
-
-    ingress {
-        from_port       = 8081
-        to_port         = 8081
-        protocol        = "tcp"
-        security_groups = [aws_security_group.sg-dt-srv-erp-acc-elb.id] //["sg-017cb67a010026364"]
-        self            = false
-    }
-
-
-    egress {
-        from_port       = 0
-        to_port         = 0
-        protocol        = "-1"
-        cidr_blocks     = ["0.0.0.0/0"]
-    }
-
-}
+//resource "aws_security_group" "sg-dt-srv-erp-acc-ecs" {
+//    // sg-0ac0021c16f78d930
+//    name        = "dt-srv-erp-acc-ecs"
+//    description = "2019-11-04T17:42:39.724Z"
+//    vpc_id              = aws_vpc.vpc-ha-dev.id
+//
+//    ingress {
+//        from_port       = 8081
+//        to_port         = 8081
+//        protocol        = "tcp"
+//        security_groups = [aws_security_group.sg-dt-srv-erp-acc-elb.id] //["sg-017cb67a010026364"]
+//        self            = false
+//    }
+//
+//
+//    egress {
+//        from_port       = 0
+//        to_port         = 0
+//        protocol        = "-1"
+//        cidr_blocks     = ["0.0.0.0/0"]
+//    }
+//
+//}
 
 //resource "aws_security_group" "sg-dt-srv-erp-ct-prod-ecs" {
 //      // sg-0acc37ccbfa06d6b2
@@ -968,30 +968,30 @@ resource "aws_security_group" "sg-dt-client-erp-dev-elb" {
 //    }
 //
 //}
-
-resource "aws_security_group" "sg-dev-petrol-eu-central-1a-test" {
-    // sg-0bc9a60b1f55eed1e
-    name        = "dev-petrol-eu-central-1a-test"
-    description = "dev-petrol-eu-central-1a-test created 2019-11-01T09:35:44.197+02:00"
-    vpc_id              = aws_vpc.vpc-ha-dev.id
-
-    ingress {
-        from_port       = 22
-        to_port         = 22
-        protocol        = "tcp"
-        security_groups = [aws_security_group.sg-dev-vpn-gateway.id] //"sg-0f853479131f7a43f"]
-        self            = false
-    }
-
-
-    egress {
-        from_port       = 0
-        to_port         = 0
-        protocol        = "-1"
-        cidr_blocks     = ["0.0.0.0/0"]
-    }
-
-}
+//
+//resource "aws_security_group" "sg-dev-petrol-eu-central-1a-test" {
+//    // sg-0bc9a60b1f55eed1e
+//    name        = "dev-petrol-eu-central-1a-test"
+//    description = "dev-petrol-eu-central-1a-test created 2019-11-01T09:35:44.197+02:00"
+//    vpc_id              = aws_vpc.vpc-ha-dev.id
+//
+//    ingress {
+//        from_port       = 22
+//        to_port         = 22
+//        protocol        = "tcp"
+//        security_groups = [aws_security_group.sg-dev-vpn-gateway.id] //"sg-0f853479131f7a43f"]
+//        self            = false
+//    }
+//
+//
+//    egress {
+//        from_port       = 0
+//        to_port         = 0
+//        protocol        = "-1"
+//        cidr_blocks     = ["0.0.0.0/0"]
+//    }
+//
+//}
 
 resource "aws_security_group" "sg-dt-client-dev-ecs" {
     // sg-0c6b6d920c28d2696
@@ -1151,42 +1151,42 @@ resource "aws_security_group" "sg-dt-srv-erp-dev-ecs" {
 
 }
 
-resource "aws_security_group" "sg-dt-srv-erp-ct-dev-elb" {
-    // sg-0f6fc8675002d9559
-    name        = "dt-srv-erp-ct-dev-elb"
-    description = "load-balancer-wizard-1 created on 2019-07-29T18:57:33.223+03:00"
-    vpc_id              = aws_vpc.vpc-ha-dev.id
-
-    ingress {
-        from_port       = 443
-        to_port         = 443
-        protocol        = "tcp"
-        cidr_blocks     = ["10.65.2.34/32"]
-        security_groups = [
-                            aws_security_group.sg-dev.id,  // sg-dev
-                            aws_security_group.sg-dev-vpn-gateway.id //"sg-0f853479131f7a43f"
-                          ]
-        self            = false
-    }
-
-    ingress {
-        from_port       = -1
-        to_port         = -1
-        protocol        = "icmp"
-        cidr_blocks     = ["10.65.2.34/32"]
-        security_groups = [aws_security_group.sg-dev.id] // sg-dev
-        self            = false
-    }
-
-
-    egress {
-        from_port       = 0
-        to_port         = 0
-        protocol        = "-1"
-        cidr_blocks     = ["0.0.0.0/0"]
-    }
-
-}
+//resource "aws_security_group" "sg-dt-srv-erp-ct-dev-elb" {
+//    // sg-0f6fc8675002d9559
+//    name        = "dt-srv-erp-ct-dev-elb"
+//    description = "load-balancer-wizard-1 created on 2019-07-29T18:57:33.223+03:00"
+//    vpc_id              = aws_vpc.vpc-ha-dev.id
+//
+//    ingress {
+//        from_port       = 443
+//        to_port         = 443
+//        protocol        = "tcp"
+//        cidr_blocks     = ["10.65.2.34/32"]
+//        security_groups = [
+//                            aws_security_group.sg-dev.id,  // sg-dev
+//                            aws_security_group.sg-dev-vpn-gateway.id //"sg-0f853479131f7a43f"
+//                          ]
+//        self            = false
+//    }
+//
+//    ingress {
+//        from_port       = -1
+//        to_port         = -1
+//        protocol        = "icmp"
+//        cidr_blocks     = ["10.65.2.34/32"]
+//        security_groups = [aws_security_group.sg-dev.id] // sg-dev
+//        self            = false
+//    }
+//
+//
+//    egress {
+//        from_port       = 0
+//        to_port         = 0
+//        protocol        = "-1"
+//        cidr_blocks     = ["0.0.0.0/0"]
+//    }
+//
+//}
 
 resource "aws_security_group" "sg-dev-vpn-gateway" {
     // sg-0f853479131f7a43f

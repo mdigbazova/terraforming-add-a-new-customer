@@ -70,71 +70,71 @@
 //    tags = {
 //    }
 //}
-
-resource "aws_alb" "alb-dt-srv-erp-ct-dev-elb" {
-    idle_timeout    = 60
-    internal        = true
-    name            = "dt-srv-erp-ct-dev-elb"
-    security_groups = [aws_security_group.sg-dt-srv-erp-ct-dev-elb.id]//["sg-0f6fc8675002d9559"]
-    subnets         = ["subnet-03e9e3f40a309dc4d", "subnet-066d98aee17e27b7f"]
-
-    enable_deletion_protection = false
-
-    tags = {
-    }
-}
-
-resource "aws_alb" "alb-dt-client-dev-elb" {
-    idle_timeout    = 60
-    internal        = true
-    name            = "dt-client-dev-elb"
-    security_groups = [aws_security_group.sg-dt-client-dev-elb.id] //["sg-0543868a90ccb781e"]
-    subnets         = ["subnet-094551831ac91be69", "subnet-09eadcb3b5732d303"]
-
-    enable_deletion_protection = false
-
-    tags = {
-    }
-}
-
-resource "aws_alb" "alb-dt-srv-rest-dev-elb" {
-    idle_timeout    = 60
-    internal        = true
-    name            = "dt-srv-rest-dev-elb"
-    security_groups = [aws_security_group.sg-dt-srv-rest-dev-elb.id] //["sg-0332937e14633a532"]
-    subnets         = ["subnet-01136023acd783f1b", "subnet-0498063aae51b2e6e"]
-
-    enable_deletion_protection = false
-
-    tags = {
-    }
-}
-
-resource "aws_alb" "alb-dt-srv-erp-dev-elb" {
-    idle_timeout    = 60
-    internal        = true
-    name            = "dt-srv-erp-dev-elb"
-    security_groups = [aws_security_group.sg-dt-srv-erp-dev-elb.id] //["sg-0235ffe2de4c664d3"]
-    subnets         = ["subnet-01136023acd783f1b", "subnet-0498063aae51b2e6e"]
-
-    enable_deletion_protection = false
-
-    tags = {
-    }
-}
-
-resource "aws_alb" "alb-dt-client-erp-dev-elb" {
-    idle_timeout    = 60
-    internal        = true
-    name            = "dt-client-erp-dev-elb"
-    security_groups = [aws_security_group.sg-dt-client-erp-dev-elb.id] //["sg-0b16f5d1e7cd63981"]
-    subnets         = ["subnet-0e1788819d6537f48", "subnet-0f9aadc7efb6b3ee3"]
-
-    enable_deletion_protection = false
-
-    tags = {
-    }
-}
+//
+//resource "aws_alb" "alb-dt-srv-erp-ct-dev-elb" {
+//    idle_timeout    = 60
+//    internal        = true
+//    name            = "dt-srv-erp-ct-dev-elb"
+//    security_groups = [aws_security_group.sg-dt-srv-erp-ct-dev-elb.id]//["sg-0f6fc8675002d9559"]
+//    subnets         = ["subnet-03e9e3f40a309dc4d", "subnet-066d98aee17e27b7f"]
+//
+//    enable_deletion_protection = false
+//
+//    tags = {
+//    }
+//}
+//
+//resource "aws_alb" "alb-dt-client-dev-elb" {
+//    idle_timeout    = 60
+//    internal        = true
+//    name            = "dt-client-dev-elb"
+//    security_groups = [aws_security_group.sg-dt-client-dev-elb.id] //["sg-0543868a90ccb781e"]
+//    subnets         = ["subnet-094551831ac91be69", "subnet-09eadcb3b5732d303"]
+//
+//    enable_deletion_protection = false
+//
+//    tags = {
+//    }
+//}
+//
+//resource "aws_alb" "alb-dt-srv-rest-dev-elb" {
+//    idle_timeout    = 60
+//    internal        = true
+//    name            = "dt-srv-rest-dev-elb"
+//    security_groups = [aws_security_group.sg-dt-srv-rest-dev-elb.id] //["sg-0332937e14633a532"]
+//    subnets         = ["subnet-01136023acd783f1b", "subnet-0498063aae51b2e6e"]
+//
+//    enable_deletion_protection = false
+//
+//    tags = {
+//    }
+//}
+//
+//resource "aws_alb" "alb-dt-srv-erp-dev-elb" {
+//    idle_timeout    = 60
+//    internal        = true
+//    name            = "dt-srv-erp-dev-elb"
+//    security_groups = [aws_security_group.sg-dt-srv-erp-dev-elb.id] //["sg-0235ffe2de4c664d3"]
+//    subnets         = ["subnet-01136023acd783f1b", "subnet-0498063aae51b2e6e"]
+//
+//    enable_deletion_protection = false
+//
+//    tags = {
+//    }
+//}
+//
+//resource "aws_alb" "alb-dt-client-erp-dev-elb" {
+//    idle_timeout    = 60
+//    internal        = true
+//    name            = "dt-client-erp-dev-elb"
+//    security_groups = [aws_security_group.sg-dt-client-erp-dev-elb.id] //["sg-0b16f5d1e7cd63981"]
+//    subnets         = ["subnet-0e1788819d6537f48", "subnet-0f9aadc7efb6b3ee3"]
+//
+//    enable_deletion_protection = false
+//
+//    tags = {
+//    }
+//}
 
 //resource "aws_alb" "alb-dt-serv-erp-ct-prod-elb" {
 //    idle_timeout    = 60
@@ -155,18 +155,18 @@ resource "aws_alb" "alb-dt-client-erp-dev-elb" {
 //    }
 //}
 
-resource "aws_alb" "alb-dt-srv-erp-telenor-dev-elb" {
-    idle_timeout    = 60
-    internal        = true
-    name            = "dt-srv-erp-telenor-dev"
-    security_groups = [aws_security_group.sg-dt-srv-erp-telenor-dev-elb.id] //["sg-081c08676157074ba"]
-    subnets         = ["subnet-02f2dcff814bc8afe", "subnet-03af35c9160ea90d3"]
-
-    enable_deletion_protection = false
-
-    tags = {
-    }
-}
+//resource "aws_alb" "alb-dt-srv-erp-telenor-dev-elb" {
+//    idle_timeout    = 60
+//    internal        = true
+//    name            = "dt-srv-erp-telenor-dev"
+//    security_groups = [aws_security_group.sg-dt-srv-erp-telenor-dev-elb.id] //["sg-081c08676157074ba"]
+//    subnets         = ["subnet-02f2dcff814bc8afe", "subnet-03af35c9160ea90d3"]
+//
+//    enable_deletion_protection = false
+//
+//    tags = {
+//    }
+//}
 
 resource "aws_alb" "alb-dt-srv-erp-tt-dev-elb" {
     idle_timeout    = 60
@@ -180,43 +180,43 @@ resource "aws_alb" "alb-dt-srv-erp-tt-dev-elb" {
     tags = {
     }
 }
-
-resource "aws_alb" "alb-dt-srv-erp-petrol-dev-elb" {
-    idle_timeout    = 60
-    internal        = true
-    name            = "dt-srv-erp-petrol-dev-elb"
-    security_groups = [aws_security_group.sg-dt-srv-erp-petrol-dev-elb.id] //["sg-00d6b592122fc9f6a"]
-    subnets         = ["subnet-071ac2d8a7a790495", "subnet-0980495003adcbb4f"]
-
-    enable_deletion_protection = false
-
-    tags = {
-    }
-}
-
-resource "aws_alb" "alb-dt-srv-erp-acc-elb" {
-    idle_timeout    = 60
-    internal        = true
-    name            = "dt-srv-erp-acc-elb"
-    security_groups = [aws_security_group.sg-dt-srv-erp-acc-elb.id] //["sg-017cb67a010026364"]
-    subnets         = ["subnet-06e20eb3c09958bca", "subnet-0966b8d760ad11546"]
-
-    enable_deletion_protection = false
-
-    tags = {
-    }
-}
-
-resource "aws_alb" "alb-dt-client-erp-acc-elb" {
-    idle_timeout    = 60
-    internal        = true
-    name            = "dt-client-erp-acc-elb"
-    security_groups = [aws_security_group.sg-dt-client-erp-acc-elb.id] //["sg-030e076ac7301f4f9"]
-    subnets         = ["subnet-06e20eb3c09958bca", "subnet-0966b8d760ad11546"]
-
-    enable_deletion_protection = false
-
-    tags = {
-    }
-}
+//
+//resource "aws_alb" "alb-dt-srv-erp-petrol-dev-elb" {
+//    idle_timeout    = 60
+//    internal        = true
+//    name            = "dt-srv-erp-petrol-dev-elb"
+//    security_groups = [aws_security_group.sg-dt-srv-erp-petrol-dev-elb.id] //["sg-00d6b592122fc9f6a"]
+//    subnets         = ["subnet-071ac2d8a7a790495", "subnet-0980495003adcbb4f"]
+//
+//    enable_deletion_protection = false
+//
+//    tags = {
+//    }
+//}
+//
+//resource "aws_alb" "alb-dt-srv-erp-acc-elb" {
+//    idle_timeout    = 60
+//    internal        = true
+//    name            = "dt-srv-erp-acc-elb"
+//    security_groups = [aws_security_group.sg-dt-srv-erp-acc-elb.id] //["sg-017cb67a010026364"]
+//    subnets         = ["subnet-06e20eb3c09958bca", "subnet-0966b8d760ad11546"]
+//
+//    enable_deletion_protection = false
+//
+//    tags = {
+//    }
+//}
+//
+//resource "aws_alb" "alb-dt-client-erp-acc-elb" {
+//    idle_timeout    = 60
+//    internal        = true
+//    name            = "dt-client-erp-acc-elb"
+//    security_groups = [aws_security_group.sg-dt-client-erp-acc-elb.id] //["sg-030e076ac7301f4f9"]
+//    subnets         = ["subnet-06e20eb3c09958bca", "subnet-0966b8d760ad11546"]
+//
+//    enable_deletion_protection = false
+//
+//    tags = {
+//    }
+//}
 

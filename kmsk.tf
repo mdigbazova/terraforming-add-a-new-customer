@@ -18,7 +18,7 @@ resource "aws_kms_key" "key-protecting-rds-db" {//cac230cb-a9d4-4f99-8ade-45828e
     "Resource" : "*",
     "Condition" : {
       "StringEquals" : {
-        "kms:CallerAccount" : "${var.account-name}",
+        "kms:CallerAccount" : var.account-name,
         "kms:ViaService" : "rds.eu-central-1.amazonaws.com"
       }
     }

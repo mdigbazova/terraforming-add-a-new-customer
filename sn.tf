@@ -94,17 +94,17 @@ resource "aws_subnet" "subnet-dev-client-eu-central-1a" {
 //    }
 //}
 
-resource "aws_subnet" "subnet-acc-eu-central-1a" {
-    // -06e20eb3c09958bca
-    vpc_id                  = aws_vpc.vpc-ha-dev.id
-    cidr_block              = "172.31.48.0/24"
-    availability_zone       = "eu-central-1a"
-    map_public_ip_on_launch = false
-
-    tags = {
-        "Name" = "acc-eu-central-1a"
-    }
-}
+//resource "aws_subnet" "subnet-acc-eu-central-1a" {
+//    // -06e20eb3c09958bca
+//    vpc_id                  = aws_vpc.vpc-ha-dev.id
+//    cidr_block              = "172.31.48.0/24"
+//    availability_zone       = "eu-central-1a"
+//    map_public_ip_on_launch = false
+//
+//    tags = {
+//        "Name" = "acc-eu-central-1a"
+//    }
+//}
 
 //resource "aws_subnet" "subnet-prod-client-erp-eu-central-1a" {
 //    // -0bb76a3242d399ef7
@@ -190,17 +190,17 @@ resource "aws_subnet" "subnet-dev-eu-central-1a" {
     }
 }
 
-resource "aws_subnet" "subnet-dev-telenor-eu-central-1c" {
-    // -02f2dcff814bc8afe
-    vpc_id                  = aws_vpc.vpc-ha-dev.id
-    cidr_block              = "172.31.3.0/24"
-    availability_zone       = "eu-central-1c"
-    map_public_ip_on_launch = false
-
-    tags = {
-        "Name" = "dev-telenor-eu-central-1c"
-    }
-}
+//resource "aws_subnet" "subnet-dev-telenor-eu-central-1c" {
+//    // -02f2dcff814bc8afe
+//    vpc_id                  = aws_vpc.vpc-ha-dev.id
+//    cidr_block              = "172.31.3.0/24"
+//    availability_zone       = "eu-central-1c"
+//    map_public_ip_on_launch = false
+//
+//    tags = {
+//        "Name" = "dev-telenor-eu-central-1c"
+//    }
+//}
 
 //resource "aws_subnet" "subnet-prod-ct-eu-central-1c" {
 //    // -05c1dc1d171d2e856
@@ -250,17 +250,17 @@ resource "aws_subnet" "subnet-dev-tt-eu-central-1a" {
 //    }
 //}
 
-resource "aws_subnet" "subnet-dev-telenor-eu-central-1a" {
-    // -03af35c9160ea90d3
-    vpc_id                  = aws_vpc.vpc-ha-dev.id
-    cidr_block              = "172.31.19.0/24"
-    availability_zone       = "eu-central-1a"
-    map_public_ip_on_launch = false
-
-    tags = {
-        "Name" = "dev-telenor-eu-central-1a"
-    }
-}
+//resource "aws_subnet" "subnet-dev-telenor-eu-central-1a" {
+//    // -03af35c9160ea90d3
+//    vpc_id                  = aws_vpc.vpc-ha-dev.id
+//    cidr_block              = "172.31.19.0/24"
+//    availability_zone       = "eu-central-1a"
+//    map_public_ip_on_launch = false
+//
+//    tags = {
+//        "Name" = "dev-telenor-eu-central-1a"
+//    }
+//}
 
 //resource "aws_subnet" "subnet-prod-telenor-eu-central-1c" {
 //    // -0c04be0ddc703d1e1
@@ -274,29 +274,29 @@ resource "aws_subnet" "subnet-dev-telenor-eu-central-1a" {
 //    }
 //}
 
-resource "aws_subnet" "subnet-dev-petrol-eu-central-1a" {
-    // -0980495003adcbb4f
-    vpc_id                  = aws_vpc.vpc-ha-dev.id
-    cidr_block              = "172.31.20.0/24"
-    availability_zone       = "eu-central-1a"
-    map_public_ip_on_launch = false
+//resource "aws_subnet" "subnet-dev-petrol-eu-central-1a" {
+//    // -0980495003adcbb4f
+//    vpc_id                  = aws_vpc.vpc-ha-dev.id
+//    cidr_block              = "172.31.20.0/24"
+//    availability_zone       = "eu-central-1a"
+//    map_public_ip_on_launch = false
+//
+//    tags = {
+//        "Name" = "dev-petrol-eu-central-1a"
+//    }
+//}
 
-    tags = {
-        "Name" = "dev-petrol-eu-central-1a"
-    }
-}
-
-resource "aws_subnet" "subnet-dev-ct-eu-central-1c" {
-    // -03e9e3f40a309dc4d
-    vpc_id                  = aws_vpc.vpc-ha-dev.id
-    cidr_block              = "172.31.2.0/24"
-    availability_zone       = "eu-central-1c"
-    map_public_ip_on_launch = false
-
-    tags = {
-        "Name" = "dev-ct-eu-central-1c"
-    }
-}
+//resource "aws_subnet" "subnet-dev-ct-eu-central-1c" {
+//    // -03e9e3f40a309dc4d
+//    vpc_id                  = aws_vpc.vpc-ha-dev.id
+//    cidr_block              = "172.31.2.0/24"
+//    availability_zone       = "eu-central-1c"
+//    map_public_ip_on_launch = false
+//
+//    tags = {
+//        "Name" = "dev-ct-eu-central-1c"
+//    }
+//}
 
 resource "aws_subnet" "subnet-dev-tt-eu-central-1c" {
     // -0935a33c0d232112f
@@ -322,29 +322,29 @@ resource "aws_subnet" "subnet-dev-tt-eu-central-1c" {
 //    }
 //}
 
-resource "aws_subnet" "subnet-acc-eu-central-1c" {
-    // -0966b8d760ad11546
-    vpc_id                  = aws_vpc.vpc-ha-dev.id
-    cidr_block              = "172.31.64.0/24"
-    availability_zone       = "eu-central-1c"
-    map_public_ip_on_launch = false
-
-    tags = {
-        "Name" = "acc-eu-central-1c"
-    }
-}
-
-resource "aws_subnet" "subnet-acc-nat-eu-central-1a" {
-    // -00fa1be470c7b67d9
-    vpc_id                  = aws_vpc.vpc-ha-dev.id
-    cidr_block              = "172.31.114.0/24"
-    availability_zone       = "eu-central-1a"
-    map_public_ip_on_launch = false
-
-    tags = {
-        "Name" = "acc-nat-eu-central-1a"
-    }
-}
+//resource "aws_subnet" "subnet-acc-eu-central-1c" {
+//    // -0966b8d760ad11546
+//    vpc_id                  = aws_vpc.vpc-ha-dev.id
+//    cidr_block              = "172.31.64.0/24"
+//    availability_zone       = "eu-central-1c"
+//    map_public_ip_on_launch = false
+//
+//    tags = {
+//        "Name" = "acc-eu-central-1c"
+//    }
+//}
+//
+//resource "aws_subnet" "subnet-acc-nat-eu-central-1a" {
+//    // -00fa1be470c7b67d9
+//    vpc_id                  = aws_vpc.vpc-ha-dev.id
+//    cidr_block              = "172.31.114.0/24"
+//    availability_zone       = "eu-central-1a"
+//    map_public_ip_on_launch = false
+//
+//    tags = {
+//        "Name" = "acc-nat-eu-central-1a"
+//    }
+//}
 
 resource "aws_subnet" "subnet-dev-client-eu-central-1c" {
     // -094551831ac91be69
@@ -406,17 +406,17 @@ resource "aws_subnet" "subnet-dev-eu-central-1c" {
 //    }
 //}
 
-resource "aws_subnet" "subnet-dev-ct-eu-central-1a" {
-    // -066d98aee17e27b7f
-    vpc_id                  = aws_vpc.vpc-ha-dev.id
-    cidr_block              = "172.31.18.0/24"
-    availability_zone       = "eu-central-1a"
-    map_public_ip_on_launch = false
-
-    tags = {
-        "Name" = "dev-ct-eu-central-1a"
-    }
-}
+//resource "aws_subnet" "subnet-dev-ct-eu-central-1a" {
+//    // -066d98aee17e27b7f
+//    vpc_id                  = aws_vpc.vpc-ha-dev.id
+//    cidr_block              = "172.31.18.0/24"
+//    availability_zone       = "eu-central-1a"
+//    map_public_ip_on_launch = false
+//
+//    tags = {
+//        "Name" = "dev-ct-eu-central-1a"
+//    }
+//}
 
 resource "aws_subnet" "subnet-instances" {
     // -13a5916e
@@ -430,29 +430,29 @@ resource "aws_subnet" "subnet-instances" {
     }
 }
 
-resource "aws_subnet" "subnet-dev-petrol-eu-central-1c" {
-    // -071ac2d8a7a790495
-    vpc_id                  = aws_vpc.vpc-ha-dev.id
-    cidr_block              = "172.31.4.0/24"
-    availability_zone       = "eu-central-1c"
-    map_public_ip_on_launch = false
-
-    tags = {
-        "Name" = "dev-petrol-eu-central-1c"
-    }
-}
-
-resource "aws_subnet" "subnet-acc-nat-eu-central-1c" {
-    // -0dbd86afd310a0dbf
-    vpc_id                  = aws_vpc.vpc-ha-dev.id
-    cidr_block              = "172.31.115.0/24"
-    availability_zone       = "eu-central-1c"
-    map_public_ip_on_launch = false
-
-    tags = {
-        "Name" = "acc-nat-eu-central-1c"
-    }
-}
+//resource "aws_subnet" "subnet-dev-petrol-eu-central-1c" {
+//    // -071ac2d8a7a790495
+//    vpc_id                  = aws_vpc.vpc-ha-dev.id
+//    cidr_block              = "172.31.4.0/24"
+//    availability_zone       = "eu-central-1c"
+//    map_public_ip_on_launch = false
+//
+//    tags = {
+//        "Name" = "dev-petrol-eu-central-1c"
+//    }
+//}
+//
+//resource "aws_subnet" "subnet-acc-nat-eu-central-1c" {
+//    // -0dbd86afd310a0dbf
+//    vpc_id                  = aws_vpc.vpc-ha-dev.id
+//    cidr_block              = "172.31.115.0/24"
+//    availability_zone       = "eu-central-1c"
+//    map_public_ip_on_launch = false
+//
+//    tags = {
+//        "Name" = "acc-nat-eu-central-1c"
+//    }
+//}
 
 //resource "aws_subnet" "subnet-prod-telenor-eu-central-1a" {
 //    // -0428f84ccd881cd3c

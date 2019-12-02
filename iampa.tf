@@ -3,17 +3,18 @@ resource "aws_iam_policy_attachment" "AllowIndividualUserToManageTheirOwnMFA-pol
     name       = "AllowIndividualUserToManageTheirOwnMFA-policy-attachment"
     policy_arn = "arn:aws:iam::534685708436:policy/AllowIndividualUserToManageTheirOwnMFA"
     groups     = []
-    users      = ["m.digbazova", "peps", "frozkata"]
+    users      = [var.username] // , "peps", "frozkata"
     roles      = []
 }
 
-resource "aws_iam_policy_attachment" "AWSLambdaEdgeExecutionRole-84d3bd86-8ca4-4251-9393-9d3bdd7d928e-policy-attachment" {
-    name       = "AWSLambdaEdgeExecutionRole-84d3bd86-8ca4-4251-9393-9d3bdd7d928e-policy-attachment"
-    policy_arn = "arn:aws:iam::534685708436:policy/service-role/AWSLambdaEdgeExecutionRole-84d3bd86-8ca4-4251-9393-9d3bdd7d928e"
-    groups     = []
-    users      = []
-    roles      = ["digitoll-services-rest-viewer-response-prod"]
-}
+//resource "aws_iam_policy_attachment" "AWSLambdaEdgeExecutionRole-84d3bd86-8ca4-4251-9393-9d3bdd7d928e-policy-attachment" {
+//    // AWSLambdaEdgeExecutionRole-84d3bd86-8ca4-4251-9393-9d3bdd7d928e-policy-attachment
+//    name       = "AWSLambdaEdgeExecutionRole-policy-attachment" // -84d3bd86-8ca4-4251-9393-9d3bdd7d928e
+//    policy_arn = "arn:aws:iam::534685708436:policy/service-role/AWSLambdaEdgeExecutionRole".arn // -84d3bd86-8ca4-4251-9393-9d3bdd7d928e
+//    groups     = []
+//    users      = []
+//    roles      = ["digitoll-services-rest-viewer-response-prod"]
+//}
 
 //resource "aws_iam_policy_attachment" "DigitollMongoBackupProd-policy-attachment" {
 //    name       = "DigitollMongoBackupProd-policy-attachment"
@@ -31,29 +32,29 @@ resource "aws_iam_policy_attachment" "DigitollReportsDev-policy-attachment" {
     roles      = []
 }
 
-resource "aws_iam_policy_attachment" "DigitollReportsTelenor-policy-attachment" {
-    name       = "DigitollReportsTelenor-policy-attachment"
-    policy_arn = "arn:aws:iam::534685708436:policy/DigitollReportsTelenor"
-    groups     = []
-    users      = ["digitoll-reports-telenor"]
-    roles      = []
-}
+//resource "aws_iam_policy_attachment" "DigitollReportsTelenor-policy-attachment" {
+//    name       = "DigitollReportsTelenor-policy-attachment"
+//    policy_arn = "arn:aws:iam::534685708436:policy/DigitollReportsTelenor"
+//    groups     = []
+//    users      = ["digitoll-reports-telenor"]
+//    roles      = []
+//}
 
-resource "aws_iam_policy_attachment" "DigitollServicesErpAccSecrets-policy-attachment" {
-    name       = "DigitollServicesErpAccSecrets-policy-attachment"
-    policy_arn = "arn:aws:iam::534685708436:policy/DigitollServicesErpAccSecrets"
-    groups     = []
-    users      = []
-    roles      = ["DigitollServicesErpAccEcs"]
-}
-
-resource "aws_iam_policy_attachment" "DigitollServicesErpCtDevSecrets-policy-attachment" {
-    name       = "DigitollServicesErpCtDevSecrets-policy-attachment"
-    policy_arn = "arn:aws:iam::534685708436:policy/DigitollServicesErpCtDevSecrets"
-    groups     = []
-    users      = []
-    roles      = ["DigitollServicesErpCtDevSecrets"]
-}
+//resource "aws_iam_policy_attachment" "DigitollServicesErpAccSecrets-policy-attachment" {
+//    name       = "DigitollServicesErpAccSecrets-policy-attachment"
+//    policy_arn = "arn:aws:iam::534685708436:policy/DigitollServicesErpAccSecrets"
+//    groups     = []
+//    users      = []
+//    roles      = ["DigitollServicesErpAccEcs"]
+//}
+//
+//resource "aws_iam_policy_attachment" "DigitollServicesErpCtDevSecrets-policy-attachment" {
+//    name       = "DigitollServicesErpCtDevSecrets-policy-attachment"
+//    policy_arn = "arn:aws:iam::534685708436:policy/DigitollServicesErpCtDevSecrets"
+//    groups     = []
+//    users      = []
+//    roles      = ["DigitollServicesErpCtDevSecrets"]
+//}
 
 //resource "aws_iam_policy_attachment" "DigitollServicesErpCtProdSecrets-policy-attachment" {
 //    name       = "DigitollServicesErpCtProdSecrets-policy-attachment"
@@ -71,13 +72,13 @@ resource "aws_iam_policy_attachment" "DigitollServicesErpDevSecrets-policy-attac
     roles      = ["DigitollServicesErpDevEcs"]
 }
 
-resource "aws_iam_policy_attachment" "DigitollServicesErpPetrolDevSecrets-policy-attachment" {
-    name       = "DigitollServicesErpPetrolDevSecrets-policy-attachment"
-    policy_arn = "arn:aws:iam::534685708436:policy/DigitollServicesErpPetrolDevSecrets"
-    groups     = []
-    users      = []
-    roles      = ["DigitollServicesErpPetrolDevEcs"]
-}
+//resource "aws_iam_policy_attachment" "DigitollServicesErpPetrolDevSecrets-policy-attachment" {
+//    name       = "DigitollServicesErpPetrolDevSecrets-policy-attachment"
+//    policy_arn = "arn:aws:iam::534685708436:policy/DigitollServicesErpPetrolDevSecrets"
+//    groups     = []
+//    users      = []
+//    roles      = ["DigitollServicesErpPetrolDevEcs"]
+//}
 
 //resource "aws_iam_policy_attachment" "DigitollServicesErpProdSecrets-policy-attachment" {
 //    name       = "DigitollServicesErpProdSecrets-policy-attachment"
@@ -87,13 +88,13 @@ resource "aws_iam_policy_attachment" "DigitollServicesErpPetrolDevSecrets-policy
 //    roles      = ["DigitollServicesErpProdEcs"]
 //}
 
-resource "aws_iam_policy_attachment" "DigitollServicesErpTelenorDevSecrets-policy-attachment" {
-    name       = "DigitollServicesErpTelenorDevSecrets-policy-attachment"
-    policy_arn = "arn:aws:iam::534685708436:policy/DigitollServicesErpTelenorDevSecrets"
-    groups     = []
-    users      = []
-    roles      = ["DigitollServicesErpTelenorDevEcs"]
-}
+//resource "aws_iam_policy_attachment" "DigitollServicesErpTelenorDevSecrets-policy-attachment" {
+//    name       = "DigitollServicesErpTelenorDevSecrets-policy-attachment"
+//    policy_arn = "arn:aws:iam::534685708436:policy/DigitollServicesErpTelenorDevSecrets"
+//    groups     = []
+//    users      = []
+//    roles      = ["DigitollServicesErpTelenorDevEcs"]
+//}
 
 resource "aws_iam_policy_attachment" "DigitollServicesErpTtDevSecrets-policy-attachment" {
     name       = "DigitollServicesErpTtDevSecrets-policy-attachment"
@@ -131,7 +132,7 @@ resource "aws_iam_policy_attachment" "AmazonEC2FullAccess-policy-attachment" {
     name       = "AmazonEC2FullAccess-policy-attachment"
     policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
     groups     = []
-    users      = ["${var.username}", "peps", "frozkata"]
+    users      = [var.username] // , "peps", "frozkata"
     roles      = []
 }
 
@@ -139,7 +140,7 @@ resource "aws_iam_policy_attachment" "ElasticLoadBalancingFullAccess-policy-atta
     name       = "ElasticLoadBalancingFullAccess-policy-attachment"
     policy_arn = "arn:aws:iam::aws:policy/ElasticLoadBalancingFullAccess"
     groups     = []
-    users      = ["m.digbazova", "peps", "frozkata", "azfifo"]
+    users      = [var.username] // , "peps", "frozkata", "azfifo"
     roles      = []
 }
 
@@ -147,7 +148,7 @@ resource "aws_iam_policy_attachment" "AmazonS3FullAccess-policy-attachment" {
     name       = "AmazonS3FullAccess-policy-attachment"
     policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
     groups     = []
-    users      = ["ecr-rw-user", "${var.username}", "peps", "azfifo"]
+    users      = ["ecr-rw-user", var.username] // , "peps", "azfifo"
     roles      = []
 }
 
@@ -155,7 +156,7 @@ resource "aws_iam_policy_attachment" "AmazonEC2ReadOnlyAccess-policy-attachment"
     name       = "AmazonEC2ReadOnlyAccess-policy-attachment"
     policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess"
     groups     = []
-    users      = [] // "m.digbazova"
+    users      = [] // var.username
     roles      = []
 }
 
@@ -163,7 +164,7 @@ resource "aws_iam_policy_attachment" "AmazonVPCReadOnlyAccess-policy-attachment"
     name       = "AmazonVPCReadOnlyAccess-policy-attachment"
     policy_arn = "arn:aws:iam::aws:policy/AmazonVPCReadOnlyAccess"
     groups     = []
-    users      = [] //"m.digbazova"
+    users      = [] //var.username
     roles      = []
 }
 
@@ -179,7 +180,7 @@ resource "aws_iam_policy_attachment" "CloudWatchFullAccess-policy-attachment" {
     name       = "CloudWatchFullAccess-policy-attachment"
     policy_arn = "arn:aws:iam::aws:policy/CloudWatchFullAccess"
     groups     = []
-    users      = ["m.digbazova", "simeon-velinov", "frozkata"]
+    users      = [var.username] // , "simeon-velinov", "frozkata"
     roles      = []
 }
 
@@ -235,7 +236,7 @@ resource "aws_iam_policy_attachment" "AdministratorAccess-policy-attachment" {
     name       = "AdministratorAccess-policy-attachment"
     policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
     groups     = []
-    users      = ["terraform", "m.digbazova"]
+    users      = ["terraform", var.username]
     roles      = []
 }
 
@@ -243,7 +244,7 @@ resource "aws_iam_policy_attachment" "CloudWatchLogsReadOnlyAccess-policy-attach
     name       = "CloudWatchLogsReadOnlyAccess-policy-attachment"
     policy_arn = "arn:aws:iam::aws:policy/CloudWatchLogsReadOnlyAccess"
     groups     = []
-    users      = ["simeon-velinov", "azfifo"]
+    users      = [] // "simeon-velinov", "azfifo"
     roles      = []
 }
 
@@ -251,7 +252,7 @@ resource "aws_iam_policy_attachment" "IAMUserChangePassword-policy-attachment" {
     name       = "IAMUserChangePassword-policy-attachment"
     policy_arn = "arn:aws:iam::aws:policy/IAMUserChangePassword"
     groups     = []
-    users      = ["m.digbazova", "simeon-velinov", "peps", "frozkata", "azfifo"]
+    users      = [var.username] // , "simeon-velinov", "peps", "frozkata", "azfifo"
     roles      = []
 }
 
@@ -259,7 +260,7 @@ resource "aws_iam_policy_attachment" "AmazonECS_FullAccess-policy-attachment" {
     name       = "AmazonECS_FullAccess-policy-attachment"
     policy_arn = "arn:aws:iam::aws:policy/AmazonECS_FullAccess"
     groups     = []
-    users      = ["m.digbazova", "ecr-rw-user", "peps", "frozkata", "azfifo"]
+    users      = [var.username, "ecr-rw-user"] //, "peps", "frozkata", "azfifo"
     roles      = []
 }
 

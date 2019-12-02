@@ -6,13 +6,13 @@
 //    source_dest_check = true
 //}
 
-resource "aws_network_interface" "eni-dev-petrol-eu-central-1c-erp-ecs" { //  //06024d33c1dcb2d85
-    // "aws_subnet" "subnet-dev-petrol-eu-central-1c"
-    subnet_id         = aws_subnet.subnet-dev-petrol-eu-central-1c.id //"subnet-071ac2d8a7a790495"
-    private_ips       = ["172.31.4.66"]
-    security_groups   = [aws_security_group.sg-dt-srv-erp-petrol-dev-ecs.id] // ["sg-05c9a73a6a164d7f7"]
-    source_dest_check = true
-}
+//resource "aws_network_interface" "eni-dev-petrol-eu-central-1c-erp-ecs" { //  //06024d33c1dcb2d85
+//    // "aws_subnet" "subnet-dev-petrol-eu-central-1c"
+//    subnet_id         = aws_subnet.subnet-dev-petrol-eu-central-1c.id //"subnet-071ac2d8a7a790495"
+//    private_ips       = ["172.31.4.66"]
+//    security_groups   = [aws_security_group.sg-dt-srv-erp-petrol-dev-ecs.id] // ["sg-05c9a73a6a164d7f7"]
+//    source_dest_check = true
+//}
 
 //resource "aws_network_interface" "eni-prod-eu-central-1c-erp-elb" { // 0faa30e3b94300aa8
 //    subnet_id         = aws_subnet.subnet-prod-eu-central-1c.id // "subnet-0d32fab0ac551b935"
@@ -95,19 +95,19 @@ resource "aws_network_interface" "eni-dev-nat-eu-central-1a" { // 0f0dcad22b5aed
 //    source_dest_check = true
 //}
 
-resource "aws_network_interface" "eni-dev-petrol-eu-central-1c-erp-elb" { // 054096a8d55da38f9
-    subnet_id         = aws_subnet.subnet-dev-petrol-eu-central-1c.id // "subnet-071ac2d8a7a790495"
-    private_ips       = ["172.31.4.225"]
-    security_groups   = [aws_security_group.sg-dt-srv-erp-petrol-dev-elb.id] // ["sg-00d6b592122fc9f6a"]
-    source_dest_check = true
-}
+//resource "aws_network_interface" "eni-dev-petrol-eu-central-1c-erp-elb" { // 054096a8d55da38f9
+//    subnet_id         = aws_subnet.subnet-dev-petrol-eu-central-1c.id // "subnet-071ac2d8a7a790495"
+//    private_ips       = ["172.31.4.225"]
+//    security_groups   = [aws_security_group.sg-dt-srv-erp-petrol-dev-elb.id] // ["sg-00d6b592122fc9f6a"]
+//    source_dest_check = true
+//}
 
-resource "aws_network_interface" "eni-acc-eu-central-1a-erp-ecs" { // 7b2d4452
-    subnet_id         = aws_subnet.subnet-acc-eu-central-1a.id // "subnet-06e20eb3c09958bca"
-    private_ips       = ["172.31.48.172"]
-    security_groups   = [aws_security_group.sg-dt-client-erp-acc-ecs.id] // ["sg-046ad84adac6dac2e"]
-    source_dest_check = true
-}
+//resource "aws_network_interface" "eni-acc-eu-central-1a-erp-ecs" { // 7b2d4452
+//    subnet_id         = aws_subnet.subnet-acc-eu-central-1a.id // "subnet-06e20eb3c09958bca"
+//    private_ips       = ["172.31.48.172"]
+//    security_groups   = [aws_security_group.sg-dt-client-erp-acc-ecs.id] // ["sg-046ad84adac6dac2e"]
+//    source_dest_check = true
+//}
 
 resource "aws_network_interface" "eni-dev-eu-central-1c-erp-ecs" { // 0e91ea3d3de2ef107
     subnet_id         = aws_subnet.subnet-dev-eu-central-1c.id // "subnet-0498063aae51b2e6e"
@@ -130,12 +130,12 @@ resource "aws_network_interface" "eni-dev-eu-central-1a-rest-ecs" { // 4784eb6e
     source_dest_check = true
 }
 
-resource "aws_network_interface" "eni-acc-eu-central-1c-erp-ecs" { // 029e39eea5976d24a
-    subnet_id         = aws_subnet.subnet-acc-eu-central-1c.id // "subnet-0966b8d760ad11546"
-    private_ips       = ["172.31.64.157"]
-    security_groups   = [aws_security_group.sg-dt-srv-erp-acc-ecs.id] // ["sg-0ac0021c16f78d930"]
-    source_dest_check = true
-}
+//resource "aws_network_interface" "eni-acc-eu-central-1c-erp-ecs" { // 029e39eea5976d24a
+//    subnet_id         = aws_subnet.subnet-acc-eu-central-1c.id // "subnet-0966b8d760ad11546"
+//    private_ips       = ["172.31.64.157"]
+//    security_groups   = [aws_security_group.sg-dt-srv-erp-acc-ecs.id] // ["sg-0ac0021c16f78d930"]
+//    source_dest_check = true
+//}
 
 //resource "aws_network_interface" "eni-prod-eu-central-1a" { // 038365c6ceb733cbc
 //    subnet_id         = aws_subnet.subnet-prod-eu-central-1a.id // "subnet-06c028325e87a259e"
@@ -179,12 +179,12 @@ resource "aws_network_interface" "eni-dev-eu-central-1c-rest-elb" { // 0a4aef497
     source_dest_check = true
 }
 
-resource "aws_network_interface" "eni-acc-eu-central-1c-172-31-64-175" { // 017b0d5c28fde5878
-    subnet_id         = aws_subnet.subnet-acc-eu-central-1c.id // "subnet-0966b8d760ad11546"
-    private_ips       = ["172.31.64.175"]
-    security_groups   = [aws_security_group.sg-dt-srv-erp-acc-ecs.id] // ["sg-0ac0021c16f78d930"]
-    source_dest_check = true
-}
+//resource "aws_network_interface" "eni-acc-eu-central-1c-172-31-64-175" { // 017b0d5c28fde5878
+//    subnet_id         = aws_subnet.subnet-acc-eu-central-1c.id // "subnet-0966b8d760ad11546"
+//    private_ips       = ["172.31.64.175"]
+//    security_groups   = [aws_security_group.sg-dt-srv-erp-acc-ecs.id] // ["sg-0ac0021c16f78d930"]
+//    source_dest_check = true
+//}
 
 //resource "aws_network_interface" "eni-prod-client-eu-central-1c-elb" { // 0e8746d5964fc4746
 //    subnet_id         = aws_subnet.subnet-prod-client-eu-central-1c.id // "subnet-05b64efee21378f60"
@@ -193,12 +193,12 @@ resource "aws_network_interface" "eni-acc-eu-central-1c-172-31-64-175" { // 017b
 //    source_dest_check = true
 //}
 
-resource "aws_network_interface" "eni-acc-eu-central-1a-172-31-48-237" { // 0ce3d81e4c508de52
-    subnet_id         = aws_subnet.subnet-acc-eu-central-1a.id // "subnet-06e20eb3c09958bca"
-    private_ips       = ["172.31.48.237"]
-    security_groups   = [aws_security_group.sg-dt-srv-erp-acc-ecs.id] // ["sg-0ac0021c16f78d930"]
-    source_dest_check = true
-}
+//resource "aws_network_interface" "eni-acc-eu-central-1a-172-31-48-237" { // 0ce3d81e4c508de52
+//    subnet_id         = aws_subnet.subnet-acc-eu-central-1a.id // "subnet-06e20eb3c09958bca"
+//    private_ips       = ["172.31.48.237"]
+//    security_groups   = [aws_security_group.sg-dt-srv-erp-acc-ecs.id] // ["sg-0ac0021c16f78d930"]
+//    source_dest_check = true
+//}
 
 resource "aws_network_interface" "eni-dev-eu-central-1a-elb" { // 0799c5416250cd9ef
     subnet_id         = aws_subnet.subnet-dev-eu-central-1a.id // "subnet-01136023acd783f1b"
@@ -217,13 +217,13 @@ resource "aws_network_interface" "eni-dev-eu-central-1a-elb" { // 0799c5416250cd
 //        device_index = 0
 //    }
 //}
-
-resource "aws_network_interface" "eni-dev-petrol-eu-central-1a-elb" { // 04c046590a4f859d8
-    subnet_id         = aws_subnet.subnet-dev-petrol-eu-central-1a.id // "subnet-0980495003adcbb4f"
-    private_ips       = ["172.31.20.212"]
-    security_groups   = [aws_security_group.sg-dt-srv-erp-petrol-dev-elb.id] // ["sg-00d6b592122fc9f6a"]
-    source_dest_check = true
-}
+//
+//resource "aws_network_interface" "eni-dev-petrol-eu-central-1a-elb" { // 04c046590a4f859d8
+//    subnet_id         = aws_subnet.subnet-dev-petrol-eu-central-1a.id // "subnet-0980495003adcbb4f"
+//    private_ips       = ["172.31.20.212"]
+//    security_groups   = [aws_security_group.sg-dt-srv-erp-petrol-dev-elb.id] // ["sg-00d6b592122fc9f6a"]
+//    source_dest_check = true
+//}
 
 resource "aws_network_interface" "eni-dev-tt-eu-central-1c-elb" { // 0822e2f9b968f4566
     subnet_id         = aws_subnet.subnet-dev-tt-eu-central-1c.id // "subnet-0935a33c0d232112f"
@@ -232,12 +232,12 @@ resource "aws_network_interface" "eni-dev-tt-eu-central-1c-elb" { // 0822e2f9b96
     source_dest_check = true
 }
 
-resource "aws_network_interface" "eni-dev-ct-eu-central-1a" { // 0c30636d289faf500
-    subnet_id         = aws_subnet.subnet-dev-ct-eu-central-1a.id // "subnet-066d98aee17e27b7f"
-    private_ips       = ["172.31.18.103"]
-    security_groups   = [aws_security_group.sg-dt-srv-erp-ct-dev-elb.id] // ["sg-0f6fc8675002d9559"]
-    source_dest_check = true
-}
+//resource "aws_network_interface" "eni-dev-ct-eu-central-1a" { // 0c30636d289faf500
+//    subnet_id         = aws_subnet.subnet-dev-ct-eu-central-1a.id // "subnet-066d98aee17e27b7f"
+//    private_ips       = ["172.31.18.103"]
+//    security_groups   = [aws_security_group.sg-dt-srv-erp-ct-dev-elb.id] // ["sg-0f6fc8675002d9559"]
+//    source_dest_check = true
+//}
 
 //resource "aws_network_interface" "eni-prod-db-eu-central-1b" { // 0cf11810d8ed6d835
 //    subnet_id         = aws_subnet.subnet-prod-db-eu-central-1b.id // "subnet-05f5fc175b72f3ff3"
@@ -259,12 +259,12 @@ resource "aws_network_interface" "eni-dev-ct-eu-central-1a" { // 0c30636d289faf5
 //    }
 //}
 
-resource "aws_network_interface" "eni-dev-petrol-eu-central-1a-ecs" { // 0b5c74ddd43cf5977
-    subnet_id         = aws_subnet.subnet-dev-petrol-eu-central-1a.id // "subnet-0980495003adcbb4f"
-    private_ips       = ["172.31.20.57"]
-    security_groups   = [aws_security_group.sg-dt-srv-erp-petrol-dev-ecs.id] // ["sg-05c9a73a6a164d7f7"]
-    source_dest_check = true
-}
+//resource "aws_network_interface" "eni-dev-petrol-eu-central-1a-ecs" { // 0b5c74ddd43cf5977
+//    subnet_id         = aws_subnet.subnet-dev-petrol-eu-central-1a.id // "subnet-0980495003adcbb4f"
+//    private_ips       = ["172.31.20.57"]
+//    security_groups   = [aws_security_group.sg-dt-srv-erp-petrol-dev-ecs.id] // ["sg-05c9a73a6a164d7f7"]
+//    source_dest_check = true
+//}
 
 //resource "aws_network_interface" "eni-prod-nat-eu-central-1a-2" { // 0eb2b530f91831cec
 //    subnet_id         = aws_subnet.subnet-prod-nat-eu-central-1a.id // "subnet-0fe8a84407ad0c88b"
@@ -273,12 +273,12 @@ resource "aws_network_interface" "eni-dev-petrol-eu-central-1a-ecs" { // 0b5c74d
 //    source_dest_check = false
 //}
 
-resource "aws_network_interface" "eni-acc-eu-central-1a-172-31-48-169" { // // 04429f7a81845904e
-    subnet_id         = aws_subnet.subnet-acc-eu-central-1a.id // "subnet-06e20eb3c09958bca"
-    private_ips       = ["172.31.48.169"]
-    security_groups   = [aws_security_group.sg-dt-srv-erp-acc-elb.id] // ["sg-017cb67a010026364"]
-    source_dest_check = true
-}
+//resource "aws_network_interface" "eni-acc-eu-central-1a-172-31-48-169" { // // 04429f7a81845904e
+//    subnet_id         = aws_subnet.subnet-acc-eu-central-1a.id // "subnet-06e20eb3c09958bca"
+//    private_ips       = ["172.31.48.169"]
+//    security_groups   = [aws_security_group.sg-dt-srv-erp-acc-elb.id] // ["sg-017cb67a010026364"]
+//    source_dest_check = true
+//}
 
 //resource "aws_network_interface" "eni-prod-eu-central-1a" { // //01e9df5953ace341c
 //    subnet_id         = aws_subnet.subnet-prod-eu-central-1a.id // "subnet-06c028325e87a259e"
@@ -337,16 +337,16 @@ resource "aws_network_interface" "eni-instances-dev" { // 0a0a8c3274446e162
 //    source_dest_check = false
 //}
 
-resource "aws_network_interface" "eni-acc-eu-central-1a-vpn-gw" { // 0b446c04747b748a5
-    subnet_id         = aws_subnet.subnet-acc-eu-central-1a.id // "subnet-06e20eb3c09958bca"
-    private_ips       = ["172.31.48.43"]
-    security_groups   = [aws_security_group.sg-dev-vpn-gateway.id] // ["sg-0f853479131f7a43f"]
-    source_dest_check = true
-    attachment { //
-        instance     = "i-0884fea0d7d5560a0"
-        device_index = 1
-    }
-}
+//resource "aws_network_interface" "eni-acc-eu-central-1a-vpn-gw" { // 0b446c04747b748a5
+//    subnet_id         = aws_subnet.subnet-acc-eu-central-1a.id // "subnet-06e20eb3c09958bca"
+//    private_ips       = ["172.31.48.43"]
+//    security_groups   = [aws_security_group.sg-dev-vpn-gateway.id] // ["sg-0f853479131f7a43f"]
+//    source_dest_check = true
+//    attachment { //
+//        instance     = "i-0884fea0d7d5560a0"
+//        device_index = 1
+//    }
+//}
 
 resource "aws_network_interface" "eni-dev-client-eu-central-1c-172-31-119-182" { // 03f5b1c68811b27f0
     subnet_id         = aws_subnet.subnet-dev-client-eu-central-1c.id // "subnet-094551831ac91be69"
@@ -362,19 +362,19 @@ resource "aws_network_interface" "eni-dev-client-eu-central-1a-elb" { // 0165a70
     source_dest_check = true
 }
 
-resource "aws_network_interface" "eni-acc-eu-central-1a-ecs" { // 0e8171c4fabb4a497
-    subnet_id         = aws_subnet.subnet-acc-eu-central-1a.id // "subnet-06e20eb3c09958bca"
-    private_ips       = ["172.31.48.116"]
-    security_groups   = [aws_security_group.sg-dt-srv-erp-acc-ecs.id] // ["sg-0ac0021c16f78d930"]
-    source_dest_check = true
-}
-
-resource "aws_network_interface" "eni-acc-eu-central-1c-172-31-64-66" { // 00836535c3b8d6216
-    subnet_id         = aws_subnet.subnet-acc-eu-central-1c.id // "subnet-0966b8d760ad11546"
-    private_ips       = ["172.31.64.66"]
-    security_groups   = [aws_security_group.sg-dt-srv-erp-acc-elb.id] // ["sg-017cb67a010026364"]
-    source_dest_check = true
-}
+//resource "aws_network_interface" "eni-acc-eu-central-1a-ecs" { // 0e8171c4fabb4a497
+//    subnet_id         = aws_subnet.subnet-acc-eu-central-1a.id // "subnet-06e20eb3c09958bca"
+//    private_ips       = ["172.31.48.116"]
+//    security_groups   = [aws_security_group.sg-dt-srv-erp-acc-ecs.id] // ["sg-0ac0021c16f78d930"]
+//    source_dest_check = true
+//}
+//
+//resource "aws_network_interface" "eni-acc-eu-central-1c-172-31-64-66" { // 00836535c3b8d6216
+//    subnet_id         = aws_subnet.subnet-acc-eu-central-1c.id // "subnet-0966b8d760ad11546"
+//    private_ips       = ["172.31.64.66"]
+//    security_groups   = [aws_security_group.sg-dt-srv-erp-acc-elb.id] // ["sg-017cb67a010026364"]
+//    source_dest_check = true
+//}
 
 //resource "aws_network_interface" "eni-prod-db-eu-central-1a" { // 0c54e7a9c98c47446
 //    subnet_id         = aws_subnet.subnet-prod-db-eu-central-1a.id // "subnet-00c9be0a6295103d9"
@@ -410,26 +410,26 @@ resource "aws_network_interface" "eni-dev-eu-central-1a-ecs" { // 004d7061532512
 //    source_dest_check = true
 //}
 
-resource "aws_network_interface" "eni-dev-telenor-eu-central-1a-elb" { // 0ecf2a96d274f2f38
-    subnet_id         = aws_subnet.subnet-dev-telenor-eu-central-1a.id // "subnet-03af35c9160ea90d3"
-    private_ips       = ["172.31.19.49"]
-    security_groups   = [aws_security_group.sg-dt-srv-erp-telenor-dev-elb.id] // ["sg-081c08676157074ba"]
-    source_dest_check = true
-}
-
-resource "aws_network_interface" "eni-dev-telenor-eu-central-1a-ecs" { // 017c9991754138d66
-    subnet_id         = aws_subnet.subnet-dev-telenor-eu-central-1a.id // "subnet-03af35c9160ea90d3"
-    private_ips       = ["172.31.19.233"]
-    security_groups   = [aws_security_group.sg-dt-srv-erp-telenor-dev-ecs.id] // ["sg-067cf45a291db9fa6"]
-    source_dest_check = true
-}
-
-resource "aws_network_interface" "eni-dev-telenor-eu-central-1c-172-31-3-173" { // 0177ff4cb3760736f
-    subnet_id         = aws_subnet.subnet-dev-telenor-eu-central-1c.id // "subnet-02f2dcff814bc8afe"
-    private_ips       = ["172.31.3.173"]
-    security_groups   = [aws_security_group.sg-dt-srv-erp-telenor-dev-elb.id] // ["sg-081c08676157074ba"]
-    source_dest_check = true
-}
+//resource "aws_network_interface" "eni-dev-telenor-eu-central-1a-elb" { // 0ecf2a96d274f2f38
+//    subnet_id         = aws_subnet.subnet-dev-telenor-eu-central-1a.id // "subnet-03af35c9160ea90d3"
+//    private_ips       = ["172.31.19.49"]
+//    security_groups   = [aws_security_group.sg-dt-srv-erp-telenor-dev-elb.id] // ["sg-081c08676157074ba"]
+//    source_dest_check = true
+//}
+//
+//resource "aws_network_interface" "eni-dev-telenor-eu-central-1a-ecs" { // 017c9991754138d66
+//    subnet_id         = aws_subnet.subnet-dev-telenor-eu-central-1a.id // "subnet-03af35c9160ea90d3"
+//    private_ips       = ["172.31.19.233"]
+//    security_groups   = [aws_security_group.sg-dt-srv-erp-telenor-dev-ecs.id] // ["sg-067cf45a291db9fa6"]
+//    source_dest_check = true
+//}
+//
+//resource "aws_network_interface" "eni-dev-telenor-eu-central-1c-172-31-3-173" { // 0177ff4cb3760736f
+//    subnet_id         = aws_subnet.subnet-dev-telenor-eu-central-1c.id // "subnet-02f2dcff814bc8afe"
+//    private_ips       = ["172.31.3.173"]
+//    security_groups   = [aws_security_group.sg-dt-srv-erp-telenor-dev-elb.id] // ["sg-081c08676157074ba"]
+//    source_dest_check = true
+//}
 
 //resource "aws_network_interface" "eni-prod-db-eu-central-1c" { // 0a26cf4dfc36da39e
 //    subnet_id         = aws_subnet.subnet-prod-db-eu-central-1c.id // "subnet-0fd9b1a5d082eaaaa"
@@ -504,12 +504,12 @@ resource "aws_network_interface" "eni-dev-client-eu-central-1c-172-31-119-162" {
     source_dest_check = true
 }
 
-resource "aws_network_interface" "eni-dev-telenor-eu-central-1c-172-31-3-203" { // 0c4537c36e8d53f63
-    subnet_id         = aws_subnet.subnet-dev-telenor-eu-central-1c.id // "subnet-02f2dcff814bc8afe"
-    private_ips       = ["172.31.3.203"]
-    security_groups   = [aws_security_group.sg-dt-srv-erp-telenor-dev-ecs.id] // ["sg-067cf45a291db9fa6"]
-    source_dest_check = true
-}
+//resource "aws_network_interface" "eni-dev-telenor-eu-central-1c-172-31-3-203" { // 0c4537c36e8d53f63
+//    subnet_id         = aws_subnet.subnet-dev-telenor-eu-central-1c.id // "subnet-02f2dcff814bc8afe"
+//    private_ips       = ["172.31.3.203"]
+//    security_groups   = [aws_security_group.sg-dt-srv-erp-telenor-dev-ecs.id] // ["sg-067cf45a291db9fa6"]
+//    source_dest_check = true
+//}
 
 //resource "aws_network_interface" "eni-prod-rest-eu-central-1c" { // 09d1c4ecd90441703
 //    subnet_id         = aws_subnet.subnet-prod-rest-eu-central-1c.id // "subnet-06aea514c73f8cd27"
@@ -571,25 +571,25 @@ resource "aws_network_interface" "eni-dev-client-erp-eu-central-1c-elb" { // 018
 //    source_dest_check = true
 //}
 
-resource "aws_network_interface" "eni-acc-eu-central-1c-172-31-64-133" { // 03e05304d4eea2a32
-    subnet_id         = aws_subnet.subnet-acc-eu-central-1c.id // "subnet-0966b8d760ad11546"
-    private_ips       = ["172.31.64.133"]
-    security_groups   = [aws_security_group.sg-dt-client-erp-acc-elb.id] // ["sg-030e076ac7301f4f9"]
-    source_dest_check = true
-}
-
-resource "aws_network_interface" "eni-acc-eu-central-1c-ecs" { // 36d81c68
-    subnet_id         = aws_subnet.subnet-acc-eu-central-1c.id // "subnet-0966b8d760ad11546"
-    private_ips       = ["172.31.64.102"]
-    security_groups   = [aws_security_group.sg-dt-client-erp-acc-ecs.id] // ["sg-046ad84adac6dac2e"]
-    source_dest_check = true
-}
-
-resource "aws_network_interface" "eni-acc-eu-central-1a-172-31-48-84" { // 031888c4bf8551300
-    subnet_id         = aws_subnet.subnet-acc-eu-central-1a.id // "subnet-06e20eb3c09958bca"
-    private_ips       = ["172.31.48.84"]
-    security_groups   = [aws_security_group.sg-dt-client-erp-acc-elb.id] // ["sg-030e076ac7301f4f9"]
-    source_dest_check = true
-}
+//resource "aws_network_interface" "eni-acc-eu-central-1c-172-31-64-133" { // 03e05304d4eea2a32
+//    subnet_id         = aws_subnet.subnet-acc-eu-central-1c.id // "subnet-0966b8d760ad11546"
+//    private_ips       = ["172.31.64.133"]
+//    security_groups   = [aws_security_group.sg-dt-client-erp-acc-elb.id] // ["sg-030e076ac7301f4f9"]
+//    source_dest_check = true
+//}
+//
+//resource "aws_network_interface" "eni-acc-eu-central-1c-ecs" { // 36d81c68
+//    subnet_id         = aws_subnet.subnet-acc-eu-central-1c.id // "subnet-0966b8d760ad11546"
+//    private_ips       = ["172.31.64.102"]
+//    security_groups   = [aws_security_group.sg-dt-client-erp-acc-ecs.id] // ["sg-046ad84adac6dac2e"]
+//    source_dest_check = true
+//}
+//
+//resource "aws_network_interface" "eni-acc-eu-central-1a-172-31-48-84" { // 031888c4bf8551300
+//    subnet_id         = aws_subnet.subnet-acc-eu-central-1a.id // "subnet-06e20eb3c09958bca"
+//    private_ips       = ["172.31.48.84"]
+//    security_groups   = [aws_security_group.sg-dt-client-erp-acc-elb.id] // ["sg-030e076ac7301f4f9"]
+//    source_dest_check = true
+//}
 
 
