@@ -34,13 +34,13 @@ resource "aws_security_group" "sg-dt-client-erp-dev-ecs" {
     description         = "dt-client-erp-dev-ecs created on 2019-07-10T16:29:14.267Z"
     vpc_id              = aws_vpc.vpc-ha-dev.id
 
-    ingress {
-        from_port       = 3000
-        to_port         = 3000
-        protocol        = "tcp"
-        security_groups = [aws_security_group.sg-dt-client-erp-dev-elb.id]
-        self            = false
-    }
+//    ingress {
+//        from_port       = 3000
+//        to_port         = 3000
+//        protocol        = "tcp"
+//        security_groups = [aws_security_group.sg-dt-client-erp-dev-elb.id]
+//        self            = false
+//    }
 
 
     egress {
@@ -198,17 +198,17 @@ resource "aws_security_group" "sg-dt-srv-erp-dev-elb" {
     description         = "dt-srv-erp-dev-elb created on 2019-07-08T20:45:01.896+03:00"
     vpc_id              = aws_vpc.vpc-ha-dev.id
 
-    ingress {
-        from_port       = 443
-        to_port         = 443
-        protocol        = "tcp"
-        security_groups = [
-                            aws_security_group.sg-dt-srv-rest-dev-ecs.id, //"sg-051ea12897f00a26e",
-                            aws_security_group.sg-dev.id,  // sg-dev
-                            aws_security_group.sg-dev-vpn-gateway.id //"sg-0f853479131f7a43f"
-                          ]
-        self            = false
-    }
+//    ingress {
+//        from_port       = 443
+//        to_port         = 443
+//        protocol        = "tcp"
+//        security_groups = [
+//                            aws_security_group.sg-dt-srv-rest-dev-ecs.id, //"sg-051ea12897f00a26e",
+//                            aws_security_group.sg-dev.id,  // sg-dev
+//                            aws_security_group.sg-dev-vpn-gateway.id //"sg-0f853479131f7a43f"
+//                          ]
+//        self            = false
+//    }
 
 
     egress {
@@ -258,16 +258,16 @@ resource "aws_security_group" "sg-dt-srv-rest-dev-elb" {
     description         = "dt-srv-rest-dev-elb created on 2019-05-21T15:50:24.147+03:00"
     vpc_id              = aws_vpc.vpc-ha-dev.id
 
-    ingress {
-        from_port       = 443
-        to_port         = 443
-        protocol        = "tcp"
-        security_groups = [
-                            aws_security_group.sg-dev.id, // sg-dev
-                            aws_security_group.sg-dev-vpn-gateway.id //"sg-0f853479131f7a43f"
-                          ]
-        self            = false
-    }
+//    ingress {
+//        from_port       = 443
+//        to_port         = 443
+//        protocol        = "tcp"
+//        security_groups = [
+//                            aws_security_group.sg-dev.id, // sg-dev
+//                            aws_security_group.sg-dev-vpn-gateway.id //"sg-0f853479131f7a43f"
+//                          ]
+//        self            = false
+//    }
 
 
     egress {
@@ -333,13 +333,13 @@ resource "aws_security_group" "sg-dt-srv-rest-dev-ecs" {
     description         = "dt-srv-rest-dev-ecs created on 2019-05-22T06:07:32.643Z"
     vpc_id              = aws_vpc.vpc-ha-dev.id
 
-    ingress {
-        from_port       = 8080
-        to_port         = 8080
-        protocol        = "tcp"
-        security_groups = [aws_security_group.sg-dt-srv-rest-dev-elb.id] //"sg-0332937e14633a532"]
-        self            = false
-    }
+//    ingress {
+//        from_port       = 8080
+//        to_port         = 8080
+//        protocol        = "tcp"
+//        security_groups = [aws_security_group.sg-dt-srv-rest-dev-elb.id] //"sg-0332937e14633a532"]
+//        self            = false
+//    }
 
 
     egress {
@@ -837,7 +837,7 @@ resource "aws_security_group" "sg-dev" {
                           //aws_security_group.sg-dt-srv-erp-petrol-dev-ecs.id, //"sg-05c9a73a6a164d7f7", // dt-srv-erp-petrol-dev-ecs
                           //aws_security_group.sg-dt-srv-erp-telenor-dev-ecs.id, //"sg-067cf45a291db9fa6", // dt-srv-erp-telenor-dev-ecs
                           //aws_security_group.sg-dt-srv-erp-ct-dev-ecs.id, //"sg-06a7317d2a573f8a1", //dt-srv-erp-ct-dev-ecs
-                          aws_security_group.sg-dt-srv-erp-acc-ecs.id, //"sg-0ac0021c16f78d930", // dt-srv-erp-acc-ecs
+                          //aws_security_group.sg-dt-srv-erp-acc-ecs.id, //"sg-0ac0021c16f78d930", // dt-srv-erp-acc-ecs
                           aws_security_group.sg-dt-srv-erp-tt-dev-ecs.id, //"sg-0ece57bb222c09e3a", //dt-srv-erp-tt-dev-ecs
                           //"sg-0ee21bbccb99a6303", //dt-srv-rest-prod-esc
                           aws_security_group.sg-dt-srv-erp-dev-ecs.id, //"sg-0f6c897c8f8701e87", //dt-srv-erp-dev-ecs
@@ -999,16 +999,16 @@ resource "aws_security_group" "sg-dt-client-dev-ecs" {
     description = "2019-06-05T10:44:28.224Z"
     vpc_id              = aws_vpc.vpc-ha-dev.id
 
-    ingress {
-        from_port       = 3000
-        to_port         = 3000
-        protocol        = "tcp"
-        security_groups = [
-                            aws_security_group.sg-dt-client-dev-elb.id, //"sg-0543868a90ccb781e",
-                            aws_security_group.sg-dev.id // sg-dev
-                          ]
-        self            = false
-    }
+//    ingress {
+//        from_port       = 3000
+//        to_port         = 3000
+//        protocol        = "tcp"
+//        security_groups = [
+//                            aws_security_group.sg-dt-client-dev-elb.id, //"sg-0543868a90ccb781e",
+//                            aws_security_group.sg-dev.id // sg-dev
+//                          ]
+//        self            = false
+//    }
 
 
     egress {
@@ -1084,13 +1084,13 @@ resource "aws_security_group" "sg-dt-srv-erp-tt-dev-ecs" {
     description = "2019-10-28T18:04:06.559Z"
     vpc_id              = aws_vpc.vpc-ha-dev.id
 
-    ingress {
-        from_port       = 8081
-        to_port         = 8081
-        protocol        = "tcp"
-        security_groups = [aws_security_group.sg-dt-srv-erp-tt-dev-elb.id] //["sg-01a99e2dfb5aca44c"]
-        self            = false
-    }
+//    ingress {
+//        from_port       = 8081
+//        to_port         = 8081
+//        protocol        = "tcp"
+//        security_groups = [aws_security_group.sg-dt-srv-erp-tt-dev-elb.id] //["sg-01a99e2dfb5aca44c"]
+//        self            = false
+//    }
 
 
     egress {
@@ -1194,13 +1194,13 @@ resource "aws_security_group" "sg-dev-vpn-gateway" {
     description = "launch-wizard-2 created 2019-07-04T16:54:49.680+03:00"
     vpc_id              = aws_vpc.vpc-ha-dev.id
 
-    ingress {
-        from_port       = 22
-        to_port         = 22
-        protocol        = "tcp"
-        security_groups = [aws_security_group.sg-dev.id] // sg-dev
-        self            = false
-    }
+//    ingress {
+//        from_port       = 22
+//        to_port         = 22
+//        protocol        = "tcp"
+//        security_groups = [aws_security_group.sg-dev.id] // sg-dev
+//        self            = false
+//    }
 
 
     egress {
@@ -1262,3 +1262,140 @@ resource "aws_security_group" "sg-default" {
 }
 
 
+#
+#  So to escape from dependancies between security groups each of other
+#  Ingress & Egress Rules
+#
+resource "aws_security_group_rule" "allow_group_sg-dt-client-erp-dev-ecs" {
+    type            = "ingress"
+    from_port       = 3000
+    to_port         = 3000
+    protocol        = "tcp"
+    security_group_id        = aws_security_group.sg-dt-client-erp-dev-elb.id
+    source_security_group_id = aws_security_group.sg-dt-client-erp-dev-ecs.id
+}
+
+//resource "aws_security_group_rule" "allow_group_sg-dt-srv-erp-tt-dev-elb" {
+//    type            = "ingress"
+//    from_port       = 443
+//    to_port         = 443
+//    protocol        = "tcp"
+//    security_groups = [
+//        aws_security_group.sg-dev.id,  // sg-dev
+//        aws_security_group.sg-dev-vpn-gateway.id //sg-dev-vpn-gateway
+//    ]
+//    source_security_group_id = aws_security_group.sg-dt-srv-erp-tt-dev-elb.id
+//    security_group_id = ""
+//}
+
+
+resource "aws_security_group_rule" "allow_group_sg-dt-srv-rest-dev-ecs" {
+    type = "ingress"
+    from_port       = 8080
+    to_port         = 8080
+    protocol        = "tcp"
+    security_group_id = aws_security_group.sg-dt-srv-rest-dev-elb.id
+    source_security_group_id = aws_security_group.sg-dt-srv-rest-dev-ecs.id
+}
+
+
+resource "aws_security_group_rule" "allow_group_sg-dt-srv-erp-dev-elb-1" {
+    type = "ingress"
+    from_port       = 443
+    to_port         = 443
+    protocol        = "tcp"
+    security_group_id = aws_security_group.sg-dt-srv-rest-dev-ecs.id //"sg-051ea12897f00a26e"
+    source_security_group_id = aws_security_group.sg-dt-srv-erp-dev-elb.id
+}
+
+resource "aws_security_group_rule" "allow_group_sg-dt-srv-erp-dev-elb-2" {
+    type = "ingress"
+    from_port       = 443
+    to_port         = 443
+    protocol        = "tcp"
+    security_group_id = aws_security_group.sg-dev.id  // sg-dev
+    source_security_group_id = aws_security_group.sg-dt-srv-erp-dev-elb.id
+}
+
+resource "aws_security_group_rule" "allow_group_sg-dt-srv-erp-dev-elb-3" {
+    type = "ingress"
+    from_port       = 443
+    to_port         = 443
+    protocol        = "tcp"
+    security_group_id = aws_security_group.sg-dev-vpn-gateway.id //"sg-0f853479131f7a43f"
+    source_security_group_id = aws_security_group.sg-dt-srv-erp-dev-elb.id
+}
+
+resource "aws_security_group_rule" "allow_group_sg-dt-srv-rest-dev-elb-1" {
+    type = "ingress"
+    from_port       = 443
+    to_port         = 443
+    protocol        = "tcp"
+    security_group_id = aws_security_group.sg-dev.id // sg-dev
+    source_security_group_id = aws_security_group.sg-dt-srv-rest-dev-elb.id
+}
+
+resource "aws_security_group_rule" "allow_group_sg-dt-srv-rest-dev-elb-2" {
+    type = "ingress"
+    from_port       = 443
+    to_port         = 443
+    protocol        = "tcp"
+    security_group_id = aws_security_group.sg-dev-vpn-gateway.id //"sg-0f853479131f7a43f"
+    source_security_group_id = aws_security_group.sg-dt-srv-rest-dev-elb.id
+}
+
+resource "aws_security_group_rule" "allow_group_sg-dt-client-dev-ecs-1" {
+    type = "ingress"
+    from_port       = 3000
+    to_port         = 3000
+    protocol        = "tcp"
+    security_group_id = aws_security_group.sg-dt-client-dev-elb.id //"sg-0543868a90ccb781e",
+    source_security_group_id = aws_security_group.sg-dt-client-dev-ecs.id
+}
+
+resource "aws_security_group_rule" "allow_group_sg-dt-client-dev-ecs-2" {
+    type = "ingress"
+    from_port       = 3000
+    to_port         = 3000
+    protocol        = "tcp"
+    security_group_id = aws_security_group.sg-dev.id // sg-dev
+    source_security_group_id = aws_security_group.sg-dt-client-dev-ecs.id
+}
+
+resource "aws_security_group_rule" "allow_group_sg-dt-srv-erp-tt-dev-ecs" {
+    type = "ingress"
+    from_port       = 8081
+    to_port         = 8081
+    protocol        = "tcp"
+    security_group_id = aws_security_group.sg-dt-srv-erp-tt-dev-elb.id
+    source_security_group_id = aws_security_group.sg-dt-srv-erp-tt-dev-ecs.id
+}
+
+resource "aws_security_group_rule" "allow_group_sg-dev-vpn-gateway" {
+    type = "ingress"
+    from_port       = 22
+    to_port         = 22
+    protocol        = "tcp"
+    security_group_id = aws_security_group.sg-dev.id
+    source_security_group_id = aws_security_group.sg-dev-vpn-gateway.id
+}
+
+
+//resource "aws_security_group_rule" "allow_group_A" {
+//    type = "ingress"
+//    from_port = 80
+//    to_port = 80
+//    protocol = "tcp"
+//    security_group_id = aws_security_group.group_B.id
+//    source_security_group_id = aws_security_group.group_A.id
+//}
+//
+//
+//resource "aws_security_group_rule" "allow_group_A" {
+//    type = "ingress"
+//    from_port = 80
+//    to_port = 80
+//    protocol = "tcp"
+//    security_group_id = aws_security_group.group_B.id
+//    source_security_group_id = aws_security_group.group_A.id
+//}

@@ -91,7 +91,7 @@ resource "aws_iam_policy" "DigitollServicesErpDevSecrets" {
         "secretsmanager:GetSecretValue"
       ],
       "Resource": [
-        "arn:aws:secretsmanager:eu-central-1:${var.account-name}:secret:/secret/digitoll-services-erp-dev".arn
+        "arn:aws:secretsmanager:eu-central-1:${var.account-name}:secret:/secret/digitoll-services-erp-dev"
       ]
     }
   ]
@@ -168,7 +168,7 @@ resource "aws_iam_policy" "DigitollServicesRestDevSecrets" {
         "secretsmanager:GetSecretValue"
       ],
       "Resource": [
-        "arn:aws:secretsmanager:eu-central-1:${var.account-name}:secret:/secret/digitoll-services-rest-dev".arn
+        "arn:aws:secretsmanager:eu-central-1:${var.account-name}:secret:/secret/digitoll-services-rest-dev"
       ]
     }
   ]
@@ -280,7 +280,7 @@ resource "aws_iam_policy" "DigitollServicesErpTtDevSecrets" {
         "secretsmanager:GetSecretValue"
       ],
       "Resource": [
-        "arn:aws:secretsmanager:eu-central-1:${var.account-name}:secret:/secret/digitoll-services-erp-tt-dev".arn
+        "arn:aws:secretsmanager:eu-central-1:${var.account-name}:secret:/secret/digitoll-services-erp-tt-dev"
       ]
     }
   ]

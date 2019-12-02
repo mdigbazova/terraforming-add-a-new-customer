@@ -45,10 +45,10 @@ resource "aws_route_table_association" "dev-eu-central-1a-rtbassoc" {// -0a6d886
 //}
 //// end of : missing route table --> so it is commented
 
-resource "aws_route_table_association" "dev-telenor-eu-central-1c-rtbassoc" {// -0babba29fcf137dca
-    route_table_id = aws_route_table.dev-client-eu-central-1a.id // "rtb-04c3f6db72b093aac"
-    subnet_id = aws_subnet.subnet-dev-telenor-eu-central-1c.id //"subnet-02f2dcff814bc8afe"
-}
+//resource "aws_route_table_association" "dev-telenor-eu-central-1c-rtbassoc" {// -0babba29fcf137dca
+//    route_table_id = aws_route_table.dev-client-eu-central-1a.id // "rtb-04c3f6db72b093aac"
+//    subnet_id = aws_subnet.subnet-dev-telenor-eu-central-1c.id //"subnet-02f2dcff814bc8afe"
+//}
 
 resource "aws_route_table_association" "dev-client-erp-eu-central-1a-rtbassoc" {// -0c40679ff0f028e52
     route_table_id = aws_route_table.dev-client-erp-eu-central-1a.id // "rtb-012e94b8fbb49d258"

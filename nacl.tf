@@ -1,9 +1,9 @@
 resource "aws_network_acl" "aws-nw-acl" {
-    vpc_id     = aws_vpc.vpc-ha-dev
+    vpc_id     = aws_vpc.vpc-ha-dev.id
     subnet_ids = [
                     aws_subnet.subnet-dev-nat-eu-central-1c.id, //08149acc2018354ba
                     aws_subnet.subnet-dev-client-eu-central-1a.id, //09eadcb3b5732d303
-                    aws_subnet.subnet-acc-nat-eu-central-1a.id, //00fa1be470c7b67d9
+                    //aws_subnet.subnet-acc-nat-eu-central-1a.id, //00fa1be470c7b67d9
                     //aws_subnet.subnet-prod-db-eu-central-1b.id, //05f5fc175b72f3ff3
                     aws_subnet.subnet-dev-tt-eu-central-1c.id, //0935a33c0d232112f
                     //aws_subnet.subnet-prod-client-erp-eu-central-1a.id, //0bb76a3242d399ef7
@@ -61,7 +61,7 @@ resource "aws_network_acl" "aws-nw-acl" {
         cidr_block = "0.0.0.0/0"
     }
 
-    tags {
+    tags = {
     }
 }
 
