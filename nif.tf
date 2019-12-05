@@ -34,7 +34,7 @@ resource "aws_network_interface" "eni-dev-eu-central-1a-vpn-gw" { // 07a11ccabe9
     security_groups   = [aws_security_group.sg-dev-vpn-gateway.id] // "sg-0f853479131f7a43f"]
     source_dest_check = true
     attachment { // 
-        instance     = "i-0884fea0d7d5560a0"
+        instance     = aws_instance.dev-eu-central-1a-vpn.id// "i-0884fea0d7d5560a0"
         device_index = 0
     }
 }
@@ -213,7 +213,7 @@ resource "aws_network_interface" "eni-dev-eu-central-1a-elb" { // 0799c5416250cd
 //    security_groups   = [aws_security_group.sg-prod-eu-central-1b-vpn.id] // ["sg-0d455927f565f6a36"]
 //    source_dest_check = true
 //    attachment { //
-//        instance     = "i-092f5c41f7ab8855c"
+//        instance     = aws_instance.prod-eu-central-1b-vpn.id //"i-092f5c41f7ab8855c"
 //        device_index = 0
 //    }
 //}
@@ -248,7 +248,7 @@ resource "aws_network_interface" "eni-dev-tt-eu-central-1c-elb" { // 0822e2f9b96
 //                        ] // ["sg-059b56d7c7c12326d", "sg-0103dad4a23a42a8e"]
 //    source_dest_check = true
 //    attachment {
-//        instance     = "i-01080fd7847d6d2a9"
+//        instance     = aws_instance.SecondaryReplicaNode0.id // "i-01080fd7847d6d2a9"
 //        device_index = 0
 //    }
 //    tags {
@@ -286,7 +286,7 @@ resource "aws_network_interface" "eni-dev-tt-eu-central-1c-elb" { // 0822e2f9b96
 //    security_groups   = [aws_security_group..id] // ["sg-06e0988b718266f8c"]
 //    source_dest_check = true
 //    attachment { //
-//        instance     = "i-0e746ac8c3a07eb51"
+//        instance     = aws_instance.prod-eu-central-1a-test.id // "i-0e746ac8c3a07eb51"
 //        device_index = 0
 //    }
 //}
@@ -318,7 +318,7 @@ resource "aws_network_interface" "eni-instances-dev" { // 0a0a8c3274446e162
     security_groups   = [aws_security_group.sg-dev.id] // ["sg-09f54d8ba328c7e7d"]
     source_dest_check = true
     attachment { //
-        instance     = "i-0f4a54db682a1ecec"
+        instance     = aws_instance.dev.id //"i-0f4a54db682a1ecec"
         device_index = 0
     }
 }
@@ -343,7 +343,7 @@ resource "aws_network_interface" "eni-instances-dev" { // 0a0a8c3274446e162
 //    security_groups   = [aws_security_group.sg-dev-vpn-gateway.id] // ["sg-0f853479131f7a43f"]
 //    source_dest_check = true
 //    attachment { //
-//        instance     = "i-0884fea0d7d5560a0"
+//        instance     = aws_instance.dev-eu-central-1a-vpn.id // "i-0884fea0d7d5560a0"
 //        device_index = 1
 //    }
 //}
@@ -385,7 +385,7 @@ resource "aws_network_interface" "eni-dev-client-eu-central-1a-elb" { // 0165a70
 //                        ] // ["sg-059b56d7c7c12326d", "sg-0103dad4a23a42a8e"]
 //    source_dest_check = true
 //    attachment { //
-//        instance     = "i-02893bddf36ff18eb"
+//        instance     = aws_instance.PrimaryReplicaNode0.id // "i-02893bddf36ff18eb"
 //        device_index = 0
 //    }
 //    tags { //
@@ -440,7 +440,7 @@ resource "aws_network_interface" "eni-dev-eu-central-1a-ecs" { // 004d7061532512
 //                        ] // ["sg-059b56d7c7c12326d", "sg-0103dad4a23a42a8e"]
 //    source_dest_check = true
 //    attachment { //
-//        instance     = "i-0134328b2f2ed9000"
+//        instance     = aws_instance.SecondaryReplicaNode1.id // "i-0134328b2f2ed9000"
 //        device_index = 0
 //    }
 //    tags { //
@@ -457,7 +457,7 @@ resource "aws_network_interface" "eni-instances-db" { // 09f966d168ed100c5
     security_groups   = [aws_security_group.sg-dev-eu-central-1b-db.id] // ["sg-08f0e1316ff276e2e"]
     source_dest_check = true
     attachment { //
-        instance     = "i-0b63f9c4f20e8665f"
+        instance     = aws_instance.dev-eu-central-1b-db.id // "i-0b63f9c4f20e8665f"
         device_index = 0
     }
 }
@@ -538,7 +538,7 @@ resource "aws_network_interface" "eni-dev-tt-eu-central-1a-elb" { // 002acd5ae39
 //    security_groups   = [aws_security_group.sg-prod-eu-central-1b-bastion.id] // ["sg-0ff93c0812b9c9bd3"]
 //    source_dest_check = true
 //    attachment { //
-//        instance     = "i-0594c732602f5f5f1"
+//        instance     = aws_instance.prod-eu-central-1b-bastion.id // "i-0594c732602f5f5f1"
 //        device_index = 0
 //    }
 //}

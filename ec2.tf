@@ -82,6 +82,8 @@
 //}
 
 resource "aws_instance" "dev-eu-central-1b-db" {
+    // to do key-pair:???
+    //https://stackoverflow.com/questions/46099329/error-with-keys-when-running-terraform-apply
     ami                         = "ami-0cc0a36f626a4fdf5"
     availability_zone           = "eu-central-1b"
     ebs_optimized               = false
@@ -119,7 +121,7 @@ resource "aws_instance" "dev-eu-central-1a-vpn" {
     ebs_optimized               = false
     instance_type               = "t2.micro"
     monitoring                  = false
-    key_name                    = "dev"
+    key_name                    = "dev-eu-central-1a-vpn"
     subnet_id                   = aws_subnet.subnet-dev-eu-central-1a.id //"subnet-01136023acd783f1b"
     vpc_security_group_ids      = [aws_security_group.sg-dev-vpn-gateway.id] //["sg-0f853479131f7a43f"]
     associate_public_ip_address = false

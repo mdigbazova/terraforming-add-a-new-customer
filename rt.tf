@@ -8,6 +8,7 @@ resource "aws_route_table" "dev-tt-eu-central-1c" {
 
     route {
         cidr_block = "0.0.0.0/0"
+        gateway_id = aws_nat_gateway.nat-dev-nat-eu-central-1c.id
     }
 
     tags = {
@@ -54,6 +55,7 @@ resource "aws_route_table" "dev-tt-eu-central-1a" {
 
     route {
         cidr_block = "0.0.0.0/0"
+        gateway_id = aws_nat_gateway.nat-dev-nat-eu-central-1a.id
     }
 
     tags = {
@@ -61,22 +63,23 @@ resource "aws_route_table" "dev-tt-eu-central-1a" {
     }
 }
 
-//resource "aws_route_table" "dev-eu-central-1a" {
-//    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
-//
-//    route {
-//        cidr_block = "213.227.179.135/32"
-//        gateway_id = aws_vpn_gateway.vpg.id // "vgw-0e6ac73982d1a57dc"
-//    }
-//
-//    route {
-//        cidr_block = "0.0.0.0/0"
-//    }
-//
-//    tags = {
-//        "Name" = "dev-eu-central-1a"
-//    }
-//}
+resource "aws_route_table" "dev-eu-central-1a" {
+    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
+
+    route {
+        cidr_block = "213.227.179.135/32"
+        gateway_id = aws_vpn_gateway.vpg.id // "vgw-0e6ac73982d1a57dc"
+    }
+
+    route {
+        cidr_block = "0.0.0.0/0"
+        gateway_id = aws_nat_gateway.nat-dev-nat-eu-central-1a.id
+    }
+
+    tags = {
+        "Name" = "dev-eu-central-1a"
+    }
+}
 
 //resource "aws_route_table" "dev-petrol-eu-central-1c" {
 //    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
@@ -117,18 +120,18 @@ resource "aws_route_table" "dev-tt-eu-central-1a" {
 //    }
 //}
 
-//resource "aws_route_table" "main" {
-//    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
-//
-//    route {
-//        cidr_block = "0.0.0.0/0"
-//        gateway_id = aws_internet_gateway.dev-igw.id // "igw-327e6a5a"
-//    }
-//
-//    tags = {
-//        "Name" = "main"
-//    }
-//}
+resource "aws_route_table" "main" {
+    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
+
+    route {
+        cidr_block = "0.0.0.0/0"
+        gateway_id = aws_internet_gateway.dev-igw.id // "igw-327e6a5a"
+    }
+
+    tags = {
+        "Name" = "main"
+    }
+}
 
 //resource "aws_route_table" "prod-petrol-eu-central-1a" {
 //    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
@@ -147,17 +150,17 @@ resource "aws_route_table" "dev-tt-eu-central-1a" {
 //    }
 //}
 
-//resource "aws_route_table" "dev-client-eu-central-1a" {
-//    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
-//
-//    route {
-//        cidr_block = "0.0.0.0/0"
-//    }
-//
-//    tags = {
-//        "Name" = "dev-client-eu-central-1a"
-//    }
-//}
+resource "aws_route_table" "dev-client-eu-central-1a" {
+    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
+
+    route {
+        cidr_block = "0.0.0.0/0"
+    }
+
+    tags = {
+        "Name" = "dev-client-eu-central-1a"
+    }
+}
 
 //resource "aws_route_table" "dev-telenor-eu-central-1c" {
 //    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
@@ -181,17 +184,17 @@ resource "aws_route_table" "dev-tt-eu-central-1a" {
 //    }
 //}
 
-//resource "aws_route_table" "dev-client-erp-eu-central-1a" {
-//    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
-//
-//    route {
-//        cidr_block = "0.0.0.0/0"
-//    }
-//
-//    tags = {
-//        "Name" = "dev-client-erp-eu-central-1a"
-//    }
-//}
+resource "aws_route_table" "dev-client-erp-eu-central-1a" {
+    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
+
+    route {
+        cidr_block = "0.0.0.0/0"
+    }
+
+    tags = {
+        "Name" = "dev-client-erp-eu-central-1a"
+    }
+}
 
 //resource "aws_route_table" "dev-telenor-eu-central-1a" {
 //    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
@@ -266,22 +269,22 @@ resource "aws_route_table" "dev-tt-eu-central-1a" {
 //    }
 //}
 
-//resource "aws_route_table" "dev-eu-central-1c" {
-//    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
-//
-//    route {
-//        cidr_block = "213.227.179.135/32"
-//        gateway_id = aws_vpn_gateway.vpg.id // "vgw-0e6ac73982d1a57dc"
-//    }
-//
-//    route {
-//        cidr_block = "0.0.0.0/0"
-//    }
-//
-//    tags = {
-//        "Name" = "dev-eu-central-1c"
-//    }
-//}
+resource "aws_route_table" "dev-eu-central-1c" {
+    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
+
+    route {
+        cidr_block = "213.227.179.135/32"
+        gateway_id = aws_vpn_gateway.vpg.id // "vgw-0e6ac73982d1a57dc"
+    }
+
+    route {
+        cidr_block = "0.0.0.0/0"
+    }
+
+    tags = {
+        "Name" = "dev-eu-central-1c"
+    }
+}
 
 //resource "aws_route_table" "acc-eu-central-1a" {
 //    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
@@ -300,17 +303,17 @@ resource "aws_route_table" "dev-tt-eu-central-1a" {
 //    }
 //}
 
-//resource "aws_route_table" "dev-client-eu-central-1c" {
-//    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
-//
-//    route {
-//        cidr_block = "0.0.0.0/0"
-//    }
-//
-//    tags = {
-//        "Name" = "dev-client-eu-central-1c"
-//    }
-//}
+resource "aws_route_table" "dev-client-eu-central-1c" {
+    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
+
+    route {
+        cidr_block = "0.0.0.0/0"
+    }
+
+    tags = {
+        "Name" = "dev-client-eu-central-1c"
+    }
+}
 
 //resource "aws_route_table" "dev-ct-eu-central-1a" {
 //    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
@@ -429,15 +432,15 @@ resource "aws_route_table" "dev-tt-eu-central-1a" {
 //    }
 //}
 
-//resource "aws_route_table" "dev-client-erp-eu-central-1c" {
-//    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
-//
-//    route {
-//        cidr_block = "0.0.0.0/0"
-//    }
-//
-//    tags = {
-//        "Name" = "dev-client-erp-eu-central-1c"
-//    }
-//}
+resource "aws_route_table" "dev-client-erp-eu-central-1c" {
+    vpc_id     = aws_vpc.vpc-ha-dev.id //"vpc-c05e4fab"
+
+    route {
+        cidr_block = "0.0.0.0/0"
+    }
+
+    tags = {
+        "Name" = "dev-client-erp-eu-central-1c"
+    }
+}
 

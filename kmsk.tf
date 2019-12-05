@@ -30,7 +30,7 @@ resource "aws_kms_key" "key-protecting-rds-db" {
     "Sid" : "Allow direct access to key metadata to the account",
     "Effect" : "Allow",
     "Principal" : {
-      "AWS" : "arn:aws:iam::0534685708436:root"
+      "AWS" : "arn:aws:iam::534685708436:root"
     },
     "Action" : [ "kms:Describe*", "kms:Get*", "kms:List*", "kms:RevokeGrant" ],
     "Resource" : "*"
