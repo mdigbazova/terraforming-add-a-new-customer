@@ -173,7 +173,10 @@ resource "aws_alb" "alb-dt-srv-erp-tt-dev-elb" {
     internal        = true
     name            = "dt-srv-erp-tt-dev-elb"
     security_groups = [aws_security_group.sg-dt-srv-erp-tt-dev-elb.id] //["sg-01a99e2dfb5aca44c"]
-    subnets         = ["subnet-04e590eea3422191c", "subnet-0935a33c0d232112f"]
+    subnets         = [
+                        aws_subnet.subnet-dev-tt-eu-central-1a.id,  // "subnet-04e590eea3422191c",
+                        aws_subnet.subnet-dev-tt-eu-central-1c.id // "subnet-0935a33c0d232112f"
+                      ]
 
     enable_deletion_protection = false
 

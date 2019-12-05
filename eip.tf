@@ -21,11 +21,13 @@
 resource "aws_eip" "eipalloc-dev-nat-eu-central-1c" { // 0ce2e574181a9bb6b
     network_interface = aws_network_interface.eni-dev-nat-eu-central-1c.id // "eni-0e906faf95f71552b"
     vpc               = true
+    depends_on        = [aws_internet_gateway.dev-igw]
 }
 
 resource "aws_eip" "eipalloc-dev-nat-eu-central-1a" { // 0d599a316dbe98a24
     network_interface = aws_network_interface.eni-dev-nat-eu-central-1a.id // "eni-0f0dcad22b5aed19d"
     vpc               = true
+    depends_on        = [aws_internet_gateway.dev-igw]
 }
 
 //resource "aws_eip" "eipalloc-prod-nat-eu-central-1a-3" { // 0d0e0a280ae383cde

@@ -50,8 +50,8 @@
 //POLICY
 //}
 
-resource "aws_iam_role_policy" "flowlogsRole_oneClick_flowlogsRole" {//1562233265923
-    name   = "oneClick_flowlogsRole" // 1562233265923 // ??? todo
+resource "aws_iam_role_policy" "oneClick_flowlogsRole" {//1562233265923
+    name   = "oneClick_flowlogsRole" // 1562233265923
     role   = "flowlogsRole"
     policy = <<POLICY
 {

@@ -1237,10 +1237,11 @@ resource "aws_security_group" "sg-dev-vpn-gateway" {
 //
 //}
 
-resource "aws_security_group" "sg-default" {
+//resource "aws_security_group" "sg-default" {
+resource "aws_default_security_group" "default" {
     // sg-f1e8d690
-    name        = "default"
-    description = "default VPC security group"
+    //name        = "default"
+    //description = "default VPC security group"
     vpc_id              = aws_vpc.vpc-ha-dev.id
 
     ingress {
@@ -1263,7 +1264,7 @@ resource "aws_security_group" "sg-default" {
 
 
 #
-#  So to escape from dependancies between security groups each of other
+#  So to escape from dependencies between security groups each of other
 #  Ingress & Egress Rules
 #
 resource "aws_security_group_rule" "allow_group_sg-dt-client-erp-dev-ecs" {

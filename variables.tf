@@ -6,11 +6,6 @@ variable "region" {
   type        = string
 }
 
-variable "username" {
-  description = "The username"
-  default     = "m.digbazova"
-  type        = string
-}
 
 //534685708436
 variable "account-name" {
@@ -19,18 +14,18 @@ variable "account-name" {
   type        = string
 }
 
-//variable "environment" {
-//  description = "The name of the deployment environment."
-//  default     = "dev"
-//  type        = "string"
-//}
-//
-//variable "alias_name" {
-//  description = "The name of the key alias"
-//  type        = "string"
-//  default     = "digitoll/encr/decr"
-//}
-//
+variable "environment" {
+  description = "The name of the deployment environment."
+  default     = "dev"
+  type        = string
+}
+
+variable "key_alias_name" {
+  description = "The name of the key alias"
+  type        = string
+  default     = "digitoll/key-protecting-rds-db"
+}
+
 //variable "deletion_window_in_days" {
 //  description = "The duration in days after which the key is deleted after destruction of the resource"
 //  type        = "string"

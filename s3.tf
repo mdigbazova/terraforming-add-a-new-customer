@@ -3,10 +3,10 @@ resource "aws_s3_bucket" "aws-athena-query-results-534685708436-eu-central-1" { 
     acl    = "private"
 }
 
-resource "aws_s3_bucket" "cf-templates-eu-central-1" {// -uqj7dki4qtmh
-    bucket = "cf-templates-eu-central-1" // -uqj7dki4qtmh
-    acl    = "private"
-}
+//resource "aws_s3_bucket" "cf-templates-eu-central-1" {// -uqj7dki4qtmh
+//    bucket = "cf-templates-eu-central-1" // -uqj7dki4qtmh
+//    acl    = "private"
+//}
 
 //resource "aws_s3_bucket" "digitoll-client-prod-elb-logs" {
 //    bucket = "digitoll-client-prod-elb-logs"
@@ -63,10 +63,10 @@ resource "aws_s3_bucket" "cf-templates-eu-central-1" {// -uqj7dki4qtmh
 //    acl    = "private"
 //}
 
-resource "aws_s3_bucket" "digitoll-reports-dev" {
-    bucket = "digitoll-reports-dev"
-    acl    = "private"
-}
+//resource "aws_s3_bucket" "digitoll-reports-dev" {
+//    bucket = "digitoll-reports-dev"
+//    acl    = "private"
+//}
 
 //resource "aws_s3_bucket" "digitoll-serv-erp-ct-prod-elb-logs" {
 //    bucket = "digitoll-serv-erp-ct-prod-elb-logs"
